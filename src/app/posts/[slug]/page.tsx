@@ -105,36 +105,32 @@ export default function PostPage({ params }: { params: { slug: string } }) {
                   <CarouselContent>
                     <CarouselItem>
                       <Card className="overflow-hidden">
-                        <CardContent className="p-0">
-                           <Link href="#">
-                            <div className="relative aspect-[4/3] w-full">
-                              <Image
-                                src="https://picsum.photos/seed/ad1/300/250"
-                                alt="Advertisement"
-                                fill
-                                className="object-cover"
-                                data-ai-hint="advertisement square"
-                              />
-                            </div>
-                          </Link>
-                        </CardContent>
+                        <Link href="#">
+                          <div className="relative aspect-[4/3] w-full">
+                            <Image
+                              src="https://picsum.photos/seed/ad1/300/250"
+                              alt="Advertisement"
+                              fill
+                              className="object-cover"
+                              data-ai-hint="advertisement square"
+                            />
+                          </div>
+                        </Link>
                       </Card>
                     </CarouselItem>
                      <CarouselItem>
                       <Card className="overflow-hidden">
-                        <CardContent className="p-0">
-                           <Link href="#">
-                            <div className="relative aspect-[4/3] w-full">
-                              <Image
-                                src="https://picsum.photos/seed/ad3/300/250"
-                                alt="Advertisement"
-                                fill
-                                className="object-cover"
-                                data-ai-hint="product promo"
-                              />
-                            </div>
-                          </Link>
-                        </CardContent>
+                        <Link href="#">
+                          <div className="relative aspect-[4/3] w-full">
+                            <Image
+                              src="https://picsum.photos/seed/ad3/300/250"
+                              alt="Advertisement"
+                              fill
+                              className="object-cover"
+                              data-ai-hint="product promo"
+                            />
+                          </div>
+                        </Link>
                       </Card>
                     </CarouselItem>
                   </CarouselContent>
@@ -152,36 +148,32 @@ export default function PostPage({ params }: { params: { slug: string } }) {
                   <CarouselContent>
                     <CarouselItem>
                       <Card className="overflow-hidden">
-                        <CardContent className="p-0">
-                          <Link href="#">
-                            <div className="relative aspect-[1/2] w-full">
-                              <Image
-                                src="https://picsum.photos/seed/ad2/300/600"
-                                alt="Advertisement"
-                                fill
-                                className="object-cover"
-                                data-ai-hint="advertisement vertical"
-                              />
-                            </div>
-                          </Link>
-                        </CardContent>
+                        <Link href="#">
+                          <div className="relative aspect-[1/2] w-full">
+                            <Image
+                              src="https://picsum.photos/seed/ad2/300/600"
+                              alt="Advertisement"
+                              fill
+                              className="object-cover"
+                              data-ai-hint="advertisement vertical"
+                            />
+                          </div>
+                        </Link>
                       </Card>
                     </CarouselItem>
                      <CarouselItem>
                       <Card className="overflow-hidden">
-                        <CardContent className="p-0">
-                          <Link href="#">
-                            <div className="relative aspect-[1/2] w-full">
-                              <Image
-                                src="https://picsum.photos/seed/ad4/300/600"
-                                alt="Advertisement"
-                                fill
-                                className="object-cover"
-                                data-ai-hint="fashion ad"
-                              />
-                            </div>
-                          </Link>
-                        </CardContent>
+                        <Link href="#">
+                          <div className="relative aspect-[1/2] w-full">
+                            <Image
+                              src="https://picsum.photos/seed/ad4/300/600"
+                              alt="Advertisement"
+                              fill
+                              className="object-cover"
+                              data-ai-hint="fashion ad"
+                            />
+                          </div>
+                        </Link>
                       </Card>
                     </CarouselItem>
                   </CarouselContent>
