@@ -68,7 +68,7 @@ export default function RootLayout({
                   </Link>
                 </CarouselItem>
               </CarouselContent>
-               <CarouselIndicatorGroup />
+              <CarouselIndicatorGroup />
             </Carousel>
           </div>
           {children}

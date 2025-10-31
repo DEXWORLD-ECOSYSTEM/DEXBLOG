@@ -297,7 +297,7 @@ const CarouselIndicatorGroup = React.forwardRef<
   return (
     <div
       ref={ref}
-      className={cn("absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center justify-center gap-2", className)}
+      className={cn("absolute bottom-4 left-1/2 z-10 -translate-x-1/2 flex items-center justify-center gap-2", className)}
       {...props}
     >
        {indicators}
