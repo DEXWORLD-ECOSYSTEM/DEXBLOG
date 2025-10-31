@@ -8,7 +8,8 @@ import { Badge } from '@/components/ui/badge';
 import { TagPills } from '@/components/tag-pills';
 import { format, parseISO } from 'date-fns';
 import Link from 'next/link';
-import { Card } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 
 export default function PostPage({ params }: { params: { slug: string } }) {
   const post = getPostBySlug(params.slug);
@@ -93,32 +94,97 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 
             <aside className="lg:col-span-4 mt-8 lg:mt-0">
               <div className="sticky top-24 space-y-8">
-                <Card>
-                  <Link href="#">
-                    <div className="relative h-[250px] w-full">
-                       <Image
-                          src="https://picsum.photos/seed/ad1/300/250"
-                          alt="Advertisement"
-                          fill
-                          className="object-cover rounded-lg"
-                          data-ai-hint="advertisement square"
-                        />
-                    </div>
-                  </Link>
-                </Card>
-                <Card>
-                   <Link href="#">
-                    <div className="relative h-[600px] w-full">
-                       <Image
-                          src="https://picsum.photos/seed/ad2/300/600"
-                          alt="Advertisement"
-                          fill
-                          className="object-cover rounded-lg"
-                          data-ai-hint="advertisement vertical"
-                        />
-                    </div>
-                  </Link>
-                </Card>
+                <Carousel
+                  className="w-full"
+                  opts={{
+                    loop: true,
+                  }}
+                  autoplay
+                  autoplayDelay={5000}
+                >
+                  <CarouselContent>
+                    <CarouselItem>
+                      <Card>
+                        <CardContent className="flex aspect-square items-center justify-center p-0">
+                           <Link href="#">
+                            <div className="relative h-[250px] w-[300px]">
+                              <Image
+                                src="https://picsum.photos/seed/ad1/300/250"
+                                alt="Advertisement"
+                                fill
+                                className="object-cover rounded-lg"
+                                data-ai-hint="advertisement square"
+                              />
+                            </div>
+                          </Link>
+                        </CardContent>
+                      </Card>
+                    </CarouselItem>
+                     <CarouselItem>
+                      <Card>
+                        <CardContent className="flex aspect-square items-center justify-center p-0">
+                           <Link href="#">
+                            <div className="relative h-[250px] w-[300px]">
+                              <Image
+                                src="https://picsum.photos/seed/ad3/300/250"
+                                alt="Advertisement"
+                                fill
+                                className="object-cover rounded-lg"
+                                data-ai-hint="product promo"
+                              />
+                            </div>
+                          </Link>
+                        </CardContent>
+                      </Card>
+                    </CarouselItem>
+                  </CarouselContent>
+                </Carousel>
+
+                 <Carousel
+                  className="w-full"
+                  opts={{
+                    loop: true,
+                  }}
+                  autoplay
+                  autoplayDelay={7000}
+                >
+                  <CarouselContent>
+                    <CarouselItem>
+                      <Card>
+                        <CardContent className="flex items-center justify-center p-0">
+                          <Link href="#">
+                            <div className="relative h-[600px] w-[300px]">
+                              <Image
+                                src="https://picsum.photos/seed/ad2/300/600"
+                                alt="Advertisement"
+                                fill
+                                className="object-cover rounded-lg"
+                                data-ai-hint="advertisement vertical"
+                              />
+                            </div>
+                          </Link>
+                        </CardContent>
+                      </Card>
+                    </CarouselItem>
+                     <CarouselItem>
+                      <Card>
+                        <CardContent className="flex items-center justify-center p-0">
+                          <Link href="#">
+                            <div className="relative h-[600px] w-[300px]">
+                              <Image
+                                src="https://picsum.photos/seed/ad4/300/600"
+                                alt="Advertisement"
+                                fill
+                                className="object-cover rounded-lg"
+                                data-ai-hint="fashion ad"
+                              />
+                            </div>
+                          </Link>
+                        </CardContent>
+                      </Card>
+                    </CarouselItem>
+                  </CarouselContent>
+                </Carousel>
               </div>
             </aside>
           </div>
