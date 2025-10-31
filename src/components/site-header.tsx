@@ -12,6 +12,7 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { useState } from 'react';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -70,7 +71,7 @@ export function SiteHeader() {
                     {link.label}
                   </Link>
                 ))}
-                 <Link href="/admin" className="text-lg" onClick={() => setSheetOpen(false)}>
+                 <Link href="/admin/login" className="text-lg" onClick={() => setSheetOpen(false)}>
                   Admin
                 </Link>
               </nav>
@@ -78,8 +79,8 @@ export function SiteHeader() {
           </Sheet>
         </div>
 
-        <div className="flex flex-1 items-center justify-end space-x-2">
-           <Link href="/" className="font-headline text-2xl font-bold md:hidden">
+        <div className="flex flex-1 items-center justify-end space-x-2 md:hidden">
+           <Link href="/" className="font-headline text-2xl font-bold">
              Blogwise
            </Link>
         </div>
@@ -93,8 +94,9 @@ export function SiteHeader() {
               className="pl-9"
             />
           </div>
+          <ThemeToggle />
            <Button asChild variant="outline" size="icon" className="hidden md:inline-flex">
-              <Link href="/admin">
+              <Link href="/admin/login">
                 <User className="h-4 w-4" />
                 <span className="sr-only">Admin Login</span>
               </Link>
