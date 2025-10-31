@@ -3,7 +3,7 @@ import { getCategoryBySlug, getPosts } from '@/lib/data';
 import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
 import { PostCard } from '@/components/post-card';
-import { PaginationComponent } from '@/components/pagination';
+import { PaginationComponent } from '@/components/pagination-component';
 
 export default function CategoryPage({ params, searchParams }: { params: { slug: string }, searchParams: { page?: string } }) {
   const category = getCategoryBySlug(params.slug);

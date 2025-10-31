@@ -2,7 +2,7 @@ import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
 import { PostCard } from '@/components/post-card';
 import { getPosts, getFeaturedPost } from '@/lib/data';
-import { PaginationComponent } from '@/components/pagination';
+import { PaginationComponent } from '@/components/pagination-component';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
 import Link from 'next/link';

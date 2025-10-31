@@ -3,7 +3,7 @@ import { getTagBySlug, getPosts } from '@/lib/data';
 import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
 import { PostCard } from '@/components/post-card';
-import { PaginationComponent } from '@/components/pagination';
+import { PaginationComponent } from '@/components/pagination-component';
 
 export default function TagPage({ params, searchParams }: { params: { slug: string }, searchParams: { page?: string } }) {
   const tag = getTagBySlug(params.slug);
