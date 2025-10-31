@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Search, Menu } from 'lucide-react';
+import { Search, Menu, User } from 'lucide-react';
 import {
   Sheet,
   SheetContent,
@@ -70,6 +70,9 @@ export function SiteHeader() {
                     {link.label}
                   </Link>
                 ))}
+                 <Link href="/admin" className="text-lg" onClick={() => setSheetOpen(false)}>
+                  Admin
+                </Link>
               </nav>
             </SheetContent>
           </Sheet>
@@ -81,7 +84,7 @@ export function SiteHeader() {
            </Link>
         </div>
         
-        <div className="flex items-center justify-end md:flex-1">
+        <div className="flex items-center justify-end md:flex-1 space-x-2">
           <div className="relative w-full max-w-sm">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
@@ -90,6 +93,12 @@ export function SiteHeader() {
               className="pl-9"
             />
           </div>
+           <Button asChild variant="outline" size="icon" className="hidden md:inline-flex">
+              <Link href="/admin">
+                <User className="h-4 w-4" />
+                <span className="sr-only">Admin Login</span>
+              </Link>
+            </Button>
         </div>
       </div>
     </header>
