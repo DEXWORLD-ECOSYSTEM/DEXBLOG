@@ -318,9 +318,8 @@ const CarouselIndicator = React.forwardRef<
       size="icon"
       variant="ghost"
       className={cn(
-        'h-2 w-2 rounded-full p-0',
+        'h-2 w-2 rounded-full p-0 bg-muted-foreground/50',
         'data-[active=true]:bg-primary',
-        'data-[active=false]:bg-muted-foreground/50',
         className
       )}
       data-active={selectedIndex === index}
