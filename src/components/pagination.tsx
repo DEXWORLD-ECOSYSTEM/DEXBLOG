@@ -3,7 +3,6 @@
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
   PaginationNext,
@@ -25,6 +24,91 @@ export function PaginationComponent({ totalPages }: PaginationComponentProps) {
     return `?${params.toString()}`;
   };
 
+  const renderPaginationLinks = () => {
+    const pageNumbers = [];
+    const ellipsis = <PaginationItem key="ellipsis_start" >...</PaginationItem>;
+
+    if (totalPages <= 7) {
+      for (let i = 1; i <= totalPages; i++) {
+        pageNumbers.push(
+          <PaginationItem key={i}>
+            <PaginationLink href={createPageURL(i)} isActive={currentPage === i}>
+              {i}
+            </PaginationLink>
+          </PaginationItem>
+        );
+      }
+    } else {
+        if (currentPage <= 4) {
+            for (let i = 1; i <= 5; i++) {
+                pageNumbers.push(
+                <PaginationItem key={i}>
+                    <PaginationLink href={createPageURL(i)} isActive={currentPage === i}>
+                    {i}
+                    </PaginationLink>
+                </PaginationItem>
+                );
+            }
+            pageNumbers.push(ellipsis);
+            pageNumbers.push(
+                <PaginationItem key={totalPages}>
+                    <PaginationLink href={createPageURL(totalPages)} isActive={currentPage === totalPages}>
+                    {totalPages}
+                    </PaginationLink>
+                </PaginationItem>
+            );
+        } else if (currentPage > totalPages - 4) {
+            pageNumbers.push(
+                <PaginationItem key={1}>
+                    <PaginationLink href={createPageURL(1)} isActive={currentPage === 1}>
+                    {1}
+                    </PaginationLink>
+                </PaginationItem>
+            );
+            pageNumbers.push(ellipsis);
+            for (let i = totalPages - 4; i <= totalPages; i++) {
+                pageNumbers.push(
+                <PaginationItem key={i}>
+                    <PaginationLink href={createPageURL(i)} isActive={currentPage === i}>
+                    {i}
+                    </PaginationLink>
+                </PaginationItem>
+                );
+            }
+        } else {
+            pageNumbers.push(
+                <PaginationItem key={1}>
+                    <PaginationLink href={createPageURL(1)} isActive={currentPage === 1}>
+                    {1}
+                    </PaginationLink>
+                </PaginationItem>
+            );
+            pageNumbers.push(<PaginationItem key="ellipsis_start">...</PaginationItem>);
+            for (let i = currentPage - 1; i <= currentPage + 1; i++) {
+                pageNumbers.push(
+                <PaginationItem key={i}>
+                    <PaginationLink href={createPageURL(i)} isActive={currentPage === i}>
+                    {i}
+                    </PaginationLink>
+                </PaginationItem>
+                );
+            }
+            pageNumbers.push(<PaginationItem key="ellipsis_end">...</PaginationItem>);
+            pageNumbers.push(
+                <PaginationItem key={totalPages}>
+                    <PaginationLink href={createPageURL(totalPages)} isActive={currentPage === totalPages}>
+                    {totalPages}
+                    </PaginationLink>
+                </PaginationItem>
+            );
+        }
+    }
+
+
+    return pageNumbers;
+  };
+
+
   return (
     <Pagination>
       <PaginationContent>
@@ -38,13 +122,7 @@ export function PaginationComponent({ totalPages }: PaginationComponentProps) {
             }
           />
         </PaginationItem>
-        {Array.from({ length: totalPages }, (_, i) => (
-          <PaginationItem key={i}>
-            <PaginationLink href={createPageURL(i + 1)} isActive={currentPage === i + 1}>
-              {i + 1}
-            </PaginationLink>
-          </PaginationItem>
-        ))}
+        {renderPaginationLinks()}
         <PaginationItem>
           <PaginationNext
             href={createPageURL(currentPage + 1)}

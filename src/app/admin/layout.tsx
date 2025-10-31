@@ -56,7 +56,7 @@ export default function AdminLayout({
                 isActive={pathname.startsWith('/admin/posts')}
                 tooltip="Posts"
               >
-                <Link href="/admin">
+                <Link href="/admin/posts">
                   <Newspaper />
                   <span>Posts</span>
                 </Link>
