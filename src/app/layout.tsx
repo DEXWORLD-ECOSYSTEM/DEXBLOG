@@ -4,7 +4,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import './globals.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import { Carousel, CarouselContent, CarouselItem, CarouselIndicator, CarouselIndicatorGroup } from '@/components/ui/carousel';
 
 export const metadata: Metadata = {
   title: 'Blogwise',
@@ -68,6 +68,10 @@ export default function RootLayout({
                   </Link>
                 </CarouselItem>
               </CarouselContent>
+               <CarouselIndicatorGroup>
+                <CarouselIndicator />
+                <CarouselIndicator />
+              </CarouselIndicatorGroup>
             </Carousel>
           </div>
           {children}

@@ -9,7 +9,7 @@ import { TagPills } from '@/components/tag-pills';
 import { format, parseISO } from 'date-fns';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
-import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import { Carousel, CarouselContent, CarouselItem, CarouselIndicator, CarouselIndicatorGroup } from '@/components/ui/carousel';
 
 export default function PostPage({ params }: { params: { slug: string } }) {
   const post = getPostBySlug(params.slug);
@@ -138,6 +138,10 @@ export default function PostPage({ params }: { params: { slug: string } }) {
                       </Card>
                     </CarouselItem>
                   </CarouselContent>
+                   <CarouselIndicatorGroup>
+                    <CarouselIndicator />
+                    <CarouselIndicator />
+                  </CarouselIndicatorGroup>
                 </Carousel>
 
                  <Carousel
@@ -184,6 +188,10 @@ export default function PostPage({ params }: { params: { slug: string } }) {
                       </Card>
                     </CarouselItem>
                   </CarouselContent>
+                   <CarouselIndicatorGroup>
+                    <CarouselIndicator />
+                    <CarouselIndicator />
+                  </CarouselIndicatorGroup>
                 </Carousel>
               </div>
             </aside>
