@@ -1,6 +1,6 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import {
   SidebarProvider,
   Sidebar,
@@ -14,6 +14,7 @@ import {
 } from '@/components/ui/sidebar';
 import { LayoutDashboard, Newspaper, Tag, Folder, User, LogOut } from 'lucide-react';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 export default function AdminLayout({
   children,
@@ -21,9 +22,40 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const router = useRouter();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (isClient) {
+      const isAuthenticated = localStorage.getItem('isAuthenticated');
+      if (!isAuthenticated && pathname !== '/admin/login') {
+        router.push('/admin/login');
+      }
+    }
+  }, [pathname, router, isClient]);
+
+  const handleLogout = () => {
+    localStorage.removeItem('isAuthenticated');
+    router.push('/admin/login');
+  };
 
   if (pathname === '/admin/login') {
     return <>{children}</>;
+  }
+
+  // Prevents flash of admin content before redirect
+  if (!isClient) {
+    return null;
+  }
+  
+  const isAuthenticated = isClient ? localStorage.getItem('isAuthenticated') : false;
+
+  if (!isAuthenticated) {
+    return null; // or a loading spinner
   }
 
   return (
@@ -56,7 +88,7 @@ export default function AdminLayout({
                 isActive={pathname.startsWith('/admin/posts')}
                 tooltip="Posts"
               >
-                <Link href="/admin/posts">
+                <Link href="/admin/posts/new">
                   <Newspaper />
                   <span>Posts</span>
                 </Link>
@@ -91,11 +123,9 @@ export default function AdminLayout({
                 </SidebarMenuButton>
              </SidebarMenuItem>
              <SidebarMenuItem>
-                <SidebarMenuButton tooltip="Log Out" asChild>
-                    <Link href="/">
-                        <LogOut />
-                        <span>Log Out</span>
-                    </Link>
+                <SidebarMenuButton tooltip="Log Out" onClick={handleLogout}>
+                    <LogOut />
+                    <span>Log Out</span>
                 </SidebarMenuButton>
              </SidebarMenuItem>
            </SidebarMenu>

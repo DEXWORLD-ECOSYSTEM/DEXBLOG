@@ -18,8 +18,8 @@ export default function LoginPage() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, you'd have authentication logic here.
-    // For this demo, we'll just redirect to the dashboard.
+    // Simulate successful authentication
+    localStorage.setItem('isAuthenticated', 'true');
     router.push('/admin');
   };
 
@@ -34,11 +34,11 @@ export default function LoginPage() {
           <CardContent className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" placeholder="admin@example.com" required />
+              <Input id="email" type="email" placeholder="admin@example.com" required defaultValue="admin@example.com" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="password">Password</Label>
-              <Input id="password" type="password" required />
+              <Input id="password" type="password" required defaultValue="password" />
             </div>
           </CardContent>
           <CardFooter>
