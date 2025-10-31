@@ -119,10 +119,10 @@ const Carousel = React.forwardRef<
       if (!api) {
         return
       }
-      setScrollSnaps(api.scrollSnaps())
+      setScrollSnaps(api.scrollSnaps)
       onSelect(api)
       api.on("reInit", () => {
-          setScrollSnaps(api.scrollSnaps())
+          setScrollSnaps(api.scrollSnaps)
           onSelect(api)
       })
       api.on("select", onSelect)
