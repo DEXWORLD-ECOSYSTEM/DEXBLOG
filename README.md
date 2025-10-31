@@ -1,122 +1,63 @@
-# Blogwise - Plataforma de Blog com IA
+# DEX BLOG - Plataforma de Conteúdo Descentralizada
 
-Este é um projeto de plataforma de blog completo construído com Next.js e Firebase Studio, apresentando um design moderno, um painel de administração funcional e recursos aprimorados por IA com Genkit.
+## Missão
 
-## Descrição
+O **DEX BLOG** é uma plataforma de conteúdo descentralizada que capacita criadores da comunidade a publicar suas histórias, análises e visões. Recompensamos a criação de conteúdo de alta qualidade com criptomoedas, com base no engajamento e no impacto gerado por suas publicações.
 
-Blogwise é uma plataforma de blog pronta para produção. Ela permite que os usuários leiam artigos, naveguem por categorias e tags. Administradores têm um painel dedicado para criar, editar e gerenciar posts, com o auxílio de uma ferramenta de IA para sugerir melhorias no conteúdo. O design é elegante, responsivo e inclui temas claro e escuro.
+## Visão
+
+Construir o futuro da mídia: uma plataforma mais justa, transparente e impulsionada por uma comunidade global de criadores e leitores.
 
 ## Tecnologias e Arquitetura
 
-O projeto utiliza uma stack moderna e robusta para garantir desempenho e escalabilidade.
+O projeto utiliza uma stack moderna e robusta para garantir desempenho, escalabilidade e descentralização.
 
-- **Framework**: **Next.js 15** (com App Router) para renderização híbrida (Server e Client Components).
-- **Linguagem**: **TypeScript** para um código mais seguro e manutenível.
-- **Estilização**: **Tailwind CSS** para estilização utility-first, com componentes **ShadCN/UI** para uma interface de usuário elegante e consistente.
-- **Componentes de UI**: A biblioteca **ShadCN/UI** é usada para componentes como botões, cards, formulários e o layout do painel administrativo.
-- **Inteligência Artificial**: **Genkit** (com o modelo Gemini do Google AI) é usado para a funcionalidade de sugestão de expansão de artigos.
-- **Gerenciamento de Formulários**: **React Hook Form** com **Zod** para validação de schemas.
-- **Ícones**: **Lucide React** para uma vasta biblioteca de ícones.
-- **Manipulação de Datas**: `date-fns` para formatação de datas.
+- **Framework**: **Next.js 15** (com App Router)
+- **Linguagem**: **TypeScript**
+- **Estilização**: **Tailwind CSS** com **ShadCN/UI**
+- **Inteligência Artificial**: **Genkit** (com modelo Gemini do Google AI) para assistência de conteúdo.
+- **Web3**: Integração com carteiras de criptomoedas (ex: MetaMask) para autenticação e distribuição de recompensas.
+- **Contratos Inteligentes**: (A serem desenvolvidos) para governança da DAO e distribuição de recompensas.
+- **Oráculos de Dados**: (A serem implementados, ex: Chainlink) para obter métricas de engajamento de forma segura.
 
-### Arquitetura
+## Funcionalidades Principais
 
-- **`src/app`**: Contém as rotas da aplicação seguindo a convenção do App Router do Next.js.
-  - **`/(site)`**: Grupo de rotas para as páginas públicas do blog (home, posts, categorias).
-  - **`/admin`**: Grupo de rotas para o painel de administração.
-- **`src/components`**: Componentes React reutilizáveis.
-  - **`/ui`**: Componentes base do ShadCN.
-  - **`/admin`**: Componentes específicos para o painel de administração, como o editor de artigos.
-- **`src/lib`**: Lógica de negócios, tipos de dados e funções utilitárias.
-  - **`data.ts`**: Simula um banco de dados, fornecendo funções para buscar posts, autores, etc.
-- **`src/ai`**: Integração com Genkit para funcionalidades de IA.
-  - **`flows`**: Define os fluxos de IA, como a análise de conteúdo de artigos.
-- **`src/styles`**: Estilos globais e configuração do Tailwind CSS.
+### Para Criadores de Conteúdo
+- **Crie e Publique:** Um editor de texto intuitivo com assistência de IA para ajudar a aprimorar o conteúdo.
+- **Monetização Descentralizada:** Receba recompensas em criptomoedas (tokens DEX) diretamente em sua carteira, com base no desempenho do seu artigo (visualizações, comentários, compartilhamentos).
+- **Painel de Controle do Criador:** Acompanhe o engajamento de suas publicações e suas recompensas em tempo real.
+- **Propriedade do Conteúdo:** Mantenha a propriedade de seu trabalho através de tecnologias descentralizadas.
 
-## Funcionalidades
+### Para a Comunidade
+- **Leitura e Descoberta:** Navegue por artigos de alta qualidade sobre diversos tópicos.
+- **Governança (DAO):** Participe da curadoria de conteúdo e da tomada de decisões da plataforma votando com tokens DEX.
+- **Interação:** Comente, compartilhe e apoie seus criadores favoritos.
 
-### Blog Público
-- Página inicial com post em destaque e lista dos artigos mais recentes.
-- Páginas de detalhes dos posts com conteúdo formatado em Markdown.
-- Navegação por categorias e tags.
-- Design responsivo para desktops, tablets e dispositivos móveis.
-- Seletor de tema claro e escuro.
-- Busca de artigos.
+## Ecossistema de Criadores (Como Participar)
 
-### Painel de Administração (`/admin`)
-- Página de login segura.
-- Dashboard principal com uma tabela de todos os posts.
-- Funcionalidade para criar um novo post.
-- Funcionalidade para editar posts existentes.
-- **Assistente de IA**: No editor de artigos, um botão "Analisar Conteúdo" usa IA para fornecer sugestões sobre como expandir e melhorar o artigo.
+O DEX BLOG é uma plataforma aberta. Qualquer pessoa pode se tornar um criador de conteúdo e começar a monetizar sua paixão e conhecimento.
 
-## Estrutura de Diretórios
+### Como Funciona:
+1.  **Conecte sua Carteira:** Acesse a plataforma DEX BLOG e conecte sua carteira de criptomoedas.
+2.  **Crie e Publique:** Utilize nosso editor para escrever seu artigo. A IA integrada pode ajudar com sugestões.
+3.  **Acompanhe o Desempenho:** Monitore o engajamento do seu conteúdo em tempo real.
+4.  **Receba Recompensas:** As recompensas são distribuídas automaticamente para sua carteira com base no engajamento.
 
-```
-.
-├── src
-│   ├── app
-│   │   ├── admin
-│   │   │   ├── layout.tsx
-│   │   │   ├── login
-│   │   │   │   └── page.tsx
-│   │   │   ├── page.tsx
-│   │   │   └── posts
-│   │   │       ├── edit
-│   │   │       │   └── [slug]
-│   │   │       │       └── page.tsx
-│   │   │       └── new
-│   │   │           └── page.tsx
-│   │   ├── categories
-│   │   │   └── [slug]
-│   │   │       └── page.tsx
-│   │   ├── globals.css
-│   │   ├── layout.tsx
-│   │   ├── page.tsx
-│   │   ├── posts
-│   │   │   └── [slug]
-│   │   │       └── page.tsx
-│   │   └── tags
-│   │       └── [slug]
-│   │           └── page.tsx
-│   ├── components
-│   │   ├── admin
-│   │   │   └── article-editor.tsx
-│   │   ├── ui
-│   │   │   └── ... (componentes ShadCN)
-│   │   ├── pagination-component.tsx
-│   │   ├── post-card.tsx
-│   │   ├── site-footer.tsx
-│   │   ├── site-header.tsx
-│   │   ├── tag-pills.tsx
-│   │   ├── theme-provider.tsx
-│   │   └── theme-toggle.tsx
-│   ├── hooks
-│   │   ├── use-mobile.tsx
-│   │   └── use-toast.ts
-│   ├── lib
-│   │   ├── data.ts
-│   │   ├── placeholder-images.json
-│   │   ├── placeholder-images.ts
-│   │   ├── types.ts
-│   │   └── utils.ts
-│   └── ai
-│       ├── dev.ts
-│       ├── flows
-│       │   └── suggest-article-expansion.ts
-│       └── genkit.ts
-├── tailwind.config.ts
-├── next.config.ts
-├── package.json
-└── README.md
-```
+## Estrutura de Recompensas (Modelo Sugerido)
 
-## Como Começar
+Recompensamos os criadores com base no mérito e no engajamento de seu conteúdo.
 
-Para iniciar o ambiente de desenvolvimento, utilize o seguinte comando:
+| Métrica de Engajamento | Fonte de Dados (Exemplo) | Recompensa (Modelo Sugerido) |
+|------------------------|--------------------------|------------------------------|
+| Visualizações Únicas   | Chainlink (Oráculo de Dados) | 0.01 DEX por visualização    |
+| Comentários de Qualidade | Análise de IA on-chain   | 0.1 DEX por comentário aprovado |
+| Compartilhamentos Sociais| API da Plataforma        | 0.05 DEX por compartilhamento |
+| Tempo de Leitura Médio | Análise da Plataforma    | Bônus por artigos > 5 min    |
 
-```bash
-npm run dev
-```
+## Como Contribuir
 
-Isso iniciará a aplicação Next.js na porta `9002`.
+- **Seja um Criador:** Comece a publicar hoje mesmo.
+- **Seja um Curador:** Participe da governança votando nos melhores conteúdos.
+- **Desenvolva a Plataforma:** Contribua com o código-fonte (open-source) e proponha novas funcionalidades.
+
+Para dúvidas e parcerias, entre em contato com a comunidade em nosso Discord ou envie um e-mail para **comunidade@dexblog.com**.
