@@ -288,22 +288,27 @@ const CarouselIndicatorGroup = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => {
+  const { scrollSnaps } = useCarousel()
+  const indicators = scrollSnaps.map((_, index) => (
+    <CarouselIndicator key={index} index={index} />
+  ))
   return (
     <div
       ref={ref}
       className={cn("absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center justify-center gap-2", className)}
       {...props}
-    />
+    >
+       {indicators}
+    </div>
   );
 });
 CarouselIndicatorGroup.displayName = 'CarouselIndicatorGroup';
 
 const CarouselIndicator = React.forwardRef<
   HTMLButtonElement,
-  React.ComponentProps<typeof Button>
->(({ className, ...props }, ref) => {
-  const { scrollTo, selectedIndex, scrollSnaps } = useCarousel();
-  const index = React.Children.count(props.children);
+  React.ComponentProps<typeof Button> & { index: number }
+>(({ className, index, ...props }, ref) => {
+  const { scrollTo, selectedIndex } = useCarousel();
 
   return (
     <Button
