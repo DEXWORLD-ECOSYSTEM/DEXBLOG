@@ -289,6 +289,8 @@ const CarouselIndicatorGroup = React.forwardRef<
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => {
   const { scrollSnaps } = useCarousel()
+  if (!scrollSnaps || scrollSnaps.length === 0) return null;
+  
   const indicators = scrollSnaps.map((_, index) => (
     <CarouselIndicator key={index} index={index} />
   ))
