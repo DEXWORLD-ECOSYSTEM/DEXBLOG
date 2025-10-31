@@ -104,15 +104,15 @@ export default function PostPage({ params }: { params: { slug: string } }) {
                 >
                   <CarouselContent>
                     <CarouselItem>
-                      <Card>
-                        <CardContent className="flex aspect-square items-center justify-center p-0">
+                      <Card className="overflow-hidden">
+                        <CardContent className="p-0">
                            <Link href="#">
-                            <div className="relative h-[250px] w-[300px]">
+                            <div className="relative aspect-[4/3] w-full">
                               <Image
                                 src="https://picsum.photos/seed/ad1/300/250"
                                 alt="Advertisement"
                                 fill
-                                className="object-cover rounded-lg"
+                                className="object-cover"
                                 data-ai-hint="advertisement square"
                               />
                             </div>
@@ -121,15 +121,15 @@ export default function PostPage({ params }: { params: { slug: string } }) {
                       </Card>
                     </CarouselItem>
                      <CarouselItem>
-                      <Card>
-                        <CardContent className="flex aspect-square items-center justify-center p-0">
+                      <Card className="overflow-hidden">
+                        <CardContent className="p-0">
                            <Link href="#">
-                            <div className="relative h-[250px] w-[300px]">
+                            <div className="relative aspect-[4/3] w-full">
                               <Image
                                 src="https://picsum.photos/seed/ad3/300/250"
                                 alt="Advertisement"
                                 fill
-                                className="object-cover rounded-lg"
+                                className="object-cover"
                                 data-ai-hint="product promo"
                               />
                             </div>
@@ -151,15 +151,15 @@ export default function PostPage({ params }: { params: { slug: string } }) {
                 >
                   <CarouselContent>
                     <CarouselItem>
-                      <Card>
-                        <CardContent className="flex items-center justify-center p-0">
+                      <Card className="overflow-hidden">
+                        <CardContent className="p-0">
                           <Link href="#">
-                            <div className="relative h-[600px] w-[300px]">
+                            <div className="relative aspect-[1/2] w-full">
                               <Image
                                 src="https://picsum.photos/seed/ad2/300/600"
                                 alt="Advertisement"
                                 fill
-                                className="object-cover rounded-lg"
+                                className="object-cover"
                                 data-ai-hint="advertisement vertical"
                               />
                             </div>
@@ -168,15 +168,15 @@ export default function PostPage({ params }: { params: { slug: string } }) {
                       </Card>
                     </CarouselItem>
                      <CarouselItem>
-                      <Card>
-                        <CardContent className="flex items-center justify-center p-0">
+                      <Card className="overflow-hidden">
+                        <CardContent className="p-0">
                           <Link href="#">
-                            <div className="relative h-[600px] w-[300px]">
+                            <div className="relative aspect-[1/2] w-full">
                               <Image
                                 src="https://picsum.photos/seed/ad4/300/600"
                                 alt="Advertisement"
                                 fill
-                                className="object-cover rounded-lg"
+                                className="object-cover"
                                 data-ai-hint="fashion ad"
                               />
                             </div>
