@@ -94,7 +94,6 @@ export function SiteHeader() {
               className="pl-9"
             />
           </div>
-          <ThemeToggle />
         </div>
       </div>
     </header>
