@@ -10,7 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import { TagPills } from '@/components/tag-pills';
 import { format, parseISO } from 'date-fns';
 import Link from 'next/link';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselIndicatorGroup } from '@/components/ui/carousel';
 
 // Correctly handle async props
@@ -31,6 +31,46 @@ export default function PostPage({ params }: { params: { slug: string } }) {
       <SiteHeader />
       <main className="flex-1">
         <div className="container mx-auto px-4 py-8 md:py-12">
+          <section className="mb-12">
+             <Carousel
+              className="w-full"
+              opts={{
+                loop: true,
+              }}
+              autoplay
+              autoplayDelay={5000}
+            >
+              <CarouselContent>
+                <CarouselItem>
+                  <Link href="#">
+                    <div className="relative h-[180px] w-full overflow-hidden rounded-lg md:h-[180px]">
+                      <Image
+                        src="https://picsum.photos/seed/adbanner1/1920/480"
+                        alt="Advertisement"
+                        fill
+                        className="object-cover"
+                        data-ai-hint="advertisement banner"
+                      />
+                    </div>
+                  </Link>
+                </CarouselItem>
+                <CarouselItem>
+                   <Link href="#">
+                    <div className="relative h-[180px] w-full overflow-hidden rounded-lg md:h-[180px]">
+                      <Image
+                        src="https://picsum.photos/seed/adbanner2/1920/480"
+                        alt="Advertisement 2"
+                        fill
+                        className="object-cover"
+                        data-ai-hint="product promotion"
+                      />
+                    </div>
+                  </Link>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselIndicatorGroup />
+            </Carousel>
+          </section>
           <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-12">
             <article className="lg:col-span-8">
               <header className="mb-8">
