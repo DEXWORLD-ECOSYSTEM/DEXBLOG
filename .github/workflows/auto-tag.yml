@@ -1,0 +1,23 @@
+name: Auto Tag Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  tag-release:
+    name: Bump version and push tag
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetches all history for all tags
+
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@1.67.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BUMP: patch # Increments the patch version (e.g., v1.0.0 -> v1.0.1)
+          WITH_V: true # Prepends a "v" to the tag (e.g., v1.0.1)
