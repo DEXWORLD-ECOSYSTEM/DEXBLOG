@@ -54,6 +54,11 @@ Recompensamos os criadores com base no mérito e no engajamento de seu conteúdo
 | Compartilhamentos Sociais| API da Plataforma        | 0.05 DEX por compartilhamento |
 | Tempo de Leitura Médio | Análise da Plataforma    | Bônus por artigos > 5 min    |
 
+## CI/CD e Automação
+
+### Versionamento Semântico Automático
+O projeto utiliza um workflow de GitHub Actions para automatizar a criação de tags de versão. A cada push no branch `main`, o sistema analisa as mensagens de commit, calcula a próxima versão semanticamente e cria uma nova tag no repositório.
+
 ## Como Contribuir
 
 - **Seja um Criador:** Comece a publicar hoje mesmo.
