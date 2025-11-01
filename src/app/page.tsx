@@ -1,3 +1,5 @@
+'use client';
+
 import { Suspense } from 'react';
 import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
@@ -33,7 +35,7 @@ export default function Home() {
                   <Link href="#">
                     <div className="relative h-[180px] w-full overflow-hidden rounded-lg md:h-[180px]">
                       <Image
-                        src="https://picsum.photos/seed/adbanner1/1920/480"
+                        src="/images/ads/ad-banner1.png"
                         alt="Advertisement"
                         fill
                         className="object-cover"
@@ -46,7 +48,7 @@ export default function Home() {
                    <Link href="#">
                     <div className="relative h-[180px] w-full overflow-hidden rounded-lg md:h-[180px]">
                       <Image
-                        src="https://picsum.photos/seed/adbanner2/1920/480"
+                        src="/images/ads/ad-banner2.png"
                         alt="Advertisement 2"
                         fill
                         className="object-cover"
