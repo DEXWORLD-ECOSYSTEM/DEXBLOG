@@ -43,7 +43,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
               <CarouselContent>
                 <CarouselItem>
                   <Link href="#">
-                    <div className="relative h-[180px] w-full overflow-hidden rounded-lg md:h-[180px]">
+                    <div className="relative h-[90px] w-full overflow-hidden rounded-lg md:h-[90px]">
                       <Image
                         src="/images/ads/ad-banner1.png"
                         alt="Advertisement"
@@ -56,7 +56,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
                 </CarouselItem>
                 <CarouselItem>
                    <Link href="#">
-                    <div className="relative h-[180px] w-full overflow-hidden rounded-lg md:h-[180px]">
+                    <div className="relative h-[90px] w-full overflow-hidden rounded-lg md:h-[90px]">
                       <Image
                         src="/images/ads/ad-banner2.png"
                         alt="Advertisement 2"
@@ -150,7 +150,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
                     <CarouselItem>
                       <Card className="overflow-hidden">
                         <Link href="#">
-                          <div className="relative aspect-[4/3] w-full">
+                          <div className="relative aspect-[6/5] w-full">
                             <Image
                               src="/images/ads/ad-square1.png"
                               alt="Advertisement"
@@ -165,7 +165,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
                      <CarouselItem>
                       <Card className="overflow-hidden">
                         <Link href="#">
-                          <div className="relative aspect-[4/3] w-full">
+                          <div className="relative aspect-[6/5] w-full">
                             <Image
                               src="/images/ads/ad-square2.png"
                               alt="Advertisement"
