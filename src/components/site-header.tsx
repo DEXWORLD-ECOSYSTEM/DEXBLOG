@@ -95,12 +95,6 @@ export function SiteHeader() {
             />
           </div>
           <ThemeToggle />
-           <Button asChild variant="outline" size="icon" className="hidden md:inline-flex">
-              <Link href="/admin/login">
-                <User className="h-4 w-4" />
-                <span className="sr-only">Admin Login</span>
-              </Link>
-            </Button>
         </div>
       </div>
     </header>
