@@ -1,8 +1,11 @@
 
 import Link from "next/link";
-import { version } from "../../package.json";
+import packageJson from "../../package.json";
 
 export function SiteFooter() {
+  const currentYear = new Date().getFullYear();
+  const version = packageJson.version;
+
   return (
     <footer className="border-t bg-background">
       {/* Adicionado `relative` para servir de referência ao elemento absoluto */}
@@ -19,7 +22,7 @@ export function SiteFooter() {
           {/* 2. Aviso de Direitos Autorais (Centralizado no Desktop) */}
           <div className="mb-4 text-center md:mb-0 md:absolute md:left-1/2 md:-translate-x-1/2">
             <p className="text-sm text-muted-foreground">
-              &copy; 2025 All rights reserved
+              &copy; {currentYear} All rights reserved
             </p>
           </div>
           
