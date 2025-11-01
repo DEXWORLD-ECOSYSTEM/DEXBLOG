@@ -71,9 +71,6 @@ export function SiteHeader() {
                     {link.label}
                   </Link>
                 ))}
-                 <Link href="/admin/login" className="text-lg" onClick={() => setSheetOpen(false)}>
-                  Admin
-                </Link>
               </nav>
             </SheetContent>
           </Sheet>
