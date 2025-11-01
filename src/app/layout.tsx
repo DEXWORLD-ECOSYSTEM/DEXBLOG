@@ -6,8 +6,9 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { inter, spaceGrotesk } from './fonts';
 import './globals.css';
 
-// Import the new CoreNav and the registry
+// Import CoreNav, Footer and the registry
 import CoreNav from '@/components/ui/core-nav';
+import Footer from '@/components/ui/footer';
 import StyledComponentsRegistry from '@/lib/registry';
 
 export default function RootLayout({
@@ -33,6 +34,7 @@ export default function RootLayout({
           >
             {children}
             {showFab && <CoreNav />}
+            <Footer />
             <Toaster />
           </ThemeProvider>
         </StyledComponentsRegistry>
