@@ -56,12 +56,15 @@ const CoreNav = () => {
         </button>
 
         {actions.map((action) => (
-          <Link key={action.id} href={action.href} passHref legacyBehavior>
-            <a 
-              className="button action-button" 
-              id={action.id} 
-              aria-label={action.label}
-            >
+          <Link
+            key={action.id}
+            href={action.href}
+            passHref
+            legacyBehavior>
+            <a
+              className="button action-button"
+              id={action.id}
+              aria-label={action.label}>
               {action.icon}
             </a>
           </Link>

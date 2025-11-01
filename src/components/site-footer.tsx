@@ -1,18 +1,35 @@
+
 import Link from "next/link";
+import { version } from "../../package.json";
 
 export function SiteFooter() {
   return (
     <footer className="border-t bg-background">
-      <div className="container mx-auto px-4 py-8">
-        <div className="flex flex-col items-center justify-between md:flex-row">
+      {/* Adicionado `relative` para servir de referência ao elemento absoluto */}
+      <div className="container relative mx-auto px-4 py-8">
+        <div className="flex flex-col items-center md:flex-row md:justify-between md:items-center">
+          
+          {/* 1. Nome do Blog (Alinhado à Esquerda no Desktop) */}
           <div className="mb-4 md:mb-0">
             <Link href="/" className="font-headline text-xl font-bold">
-              Blogwise
+              DEX World
             </Link>
           </div>
-          <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Blogwise. All rights reserved.
-          </p>
+
+          {/* 2. Aviso de Direitos Autorais (Centralizado no Desktop) */}
+          <div className="mb-4 text-center md:mb-0 md:absolute md:left-1/2 md:-translate-x-1/2">
+            <p className="text-sm text-muted-foreground">
+              &copy; 2025 All rights reserved
+            </p>
+          </div>
+          
+          {/* 3. Versão do Aplicativo (Alinhado à Direita no Desktop) */}
+          <div>
+            <p className="text-sm text-muted-foreground">
+              v{version}
+            </p>
+          </div>
+
         </div>
       </div>
     </footer>

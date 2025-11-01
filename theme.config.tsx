@@ -4,14 +4,14 @@ import { DocsThemeConfig } from 'nextra-theme-docs'
 const config: DocsThemeConfig = {
   logo: <span>DEX BLOG - Documentação</span>,
   project: {
-    link: 'https://github.com/dex-freitas/dex-blog'', // Link para o repositório
+    link: 'https://github.com/dex-freitas/dex-blog',
   },
   chat: {
-    link: 'https://discord.com'', // Link para um chat se houver
+    link: 'https://discord.com',
   },
-  docsRepositoryBase: 'https://github.com/dex-freitas/dex-blog/tree/main'', // Link para a pasta docs no repo
+  docsRepositoryBase: 'https://github.com/dex-freitas/dex-blog/tree/main',
   footer: {
-    text: 'DEX BLOG - Documentação Técnica'',
+    text: 'DEX BLOG - Documentação Técnica',
   },
 }
 

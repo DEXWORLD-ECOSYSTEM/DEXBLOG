@@ -6,11 +6,13 @@ import { SiteFooter } from '@/components/site-footer';
 import { PostCard } from '@/components/post-card';
 import { getPosts, getFeaturedPost } from '@/lib/data';
 import { PaginationComponent } from '@/components/pagination-component';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { Carousel, CarouselContent, CarouselItem, CarouselIndicatorGroup } from '@/components/ui/carousel';
+import { CreatorsListComponent } from '@/components/creators-list';
+import { VideosSection } from '@/components/videos-section';
 
 export default function Home() {
   const posts = getPosts({ page: 1, limit: 6 });
@@ -94,6 +96,8 @@ export default function Home() {
             </section>
           )}
 
+          <CreatorsListComponent />
+
           <section>
             <h2 className="font-headline text-3xl font-bold mb-8">Latest Articles</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -107,6 +111,8 @@ export default function Home() {
               </Suspense>
             </div>
           </section>
+
+          <VideosSection />
         </div>
       </main>
       <SiteFooter />
