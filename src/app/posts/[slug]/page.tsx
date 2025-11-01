@@ -1,3 +1,5 @@
+'use client';
+
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { getPostBySlug, getAuthorById, getTagsByIds, getCategoryById } from '@/lib/data';
@@ -11,7 +13,9 @@ import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselIndicatorGroup } from '@/components/ui/carousel';
 
-export default async function PostPage({ params: { slug } }: { params: { slug: string } }) {
+// Correctly handle async props
+export default function PostPage({ params }: { params: { slug: string } }) {
+  const { slug } = params;
   const post = getPostBySlug(slug);
 
   if (!post) {
