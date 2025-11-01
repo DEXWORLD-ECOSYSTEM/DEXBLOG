@@ -59,6 +59,8 @@ Recompensamos os criadores com base no mérito e no engajamento de seu conteúdo
 ### Versionamento Semântico Automático
 O projeto utiliza um workflow de GitHub Actions para automatizar a criação de tags de versão. A cada push no branch `main`, o sistema analisa as mensagens de commit, calcula a próxima versão semanticamente e cria uma nova tag no repositório.
 
+- **Como Funciona:** O versionamento é impulsionado pelo padrão **Conventional Commits**. Mensagens de commit como `feat(...)` geram um salto de versão `minor` (ex: 1.1.0 -> 1.2.0), enquanto `fix(...)` gera um salto de `patch` (ex: 1.1.0 -> 1.1.1).
+
 ## Como Contribuir
 
 - **Seja um Criador:** Comece a publicar hoje mesmo.
