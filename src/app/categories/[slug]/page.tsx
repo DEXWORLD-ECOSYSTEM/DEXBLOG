@@ -6,7 +6,9 @@ import { SiteFooter } from '@/components/site-footer';
 import { PostCard } from '@/components/post-card';
 import { PaginationComponent } from '@/components/pagination-component';
 
-export default async function CategoryPage({ params: { slug }, searchParams: { page } }: { params: { slug: string }, searchParams: { page?: string } }) {
+export default async function CategoryPage({ params, searchParams }: { params: { slug: string }, searchParams: { page?: string } }) {
+  const { slug } = params;
+  const { page } = searchParams;
   const category = getCategoryBySlug(slug);
 
   if (!category) {

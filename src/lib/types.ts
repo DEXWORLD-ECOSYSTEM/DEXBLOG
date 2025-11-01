@@ -32,3 +32,11 @@ export type Post = {
   categoryId: string;
   tagIds: string[];
 };
+
+export type Comment = {
+  id: string;
+  postId: string;
+  authorName: string;
+  content: string;
+  publishedAt: string;
+};

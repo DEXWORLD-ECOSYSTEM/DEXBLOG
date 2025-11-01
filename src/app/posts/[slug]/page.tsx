@@ -2,7 +2,8 @@
 
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import { getPostBySlug, getAuthorById, getTagsByIds, getCategoryById } from '@/lib/data';
+import { getPostBySlug, getAuthorById, getTagsByIds, getCategoryById, getCommentsByPostId } from '@/lib/data';
+import { Comments } from '@/components/comments';
 import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -13,7 +14,6 @@ import Link from 'next/link';
 import { Card } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselIndicatorGroup } from '@/components/ui/carousel';
 
-// Correctly handle async props
 export default function PostPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const post = getPostBySlug(slug);
@@ -25,6 +25,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
   const author = getAuthorById(post.authorId);
   const category = getCategoryById(post.categoryId);
   const tags = getTagsByIds(post.tagIds);
+  const comments = getCommentsByPostId(post.id);
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -134,6 +135,10 @@ export default function PostPage({ params }: { params: { slug: string } }) {
                   </div>
                 )}
               </footer>
+
+              <section className="mt-12">
+                <Comments initialComments={comments} postId={post.id} />
+              </section>
             </article>
 
             <aside className="lg:col-span-4 mt-8 lg:mt-0">
