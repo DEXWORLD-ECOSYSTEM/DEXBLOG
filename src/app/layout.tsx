@@ -6,8 +6,8 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { inter, spaceGrotesk } from './fonts';
 import './globals.css';
 
-// Import the new FloatingActionButton and the registry
-import FloatingActionButton from '@/components/ui/floating-action-button';
+// Import the new CoreNav and the registry
+import CoreNav from '@/components/ui/core-nav';
 import StyledComponentsRegistry from '@/lib/registry';
 
 export default function RootLayout({
@@ -32,7 +32,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             {children}
-            {showFab && <FloatingActionButton />}
+            {showFab && <CoreNav />}
             <Toaster />
           </ThemeProvider>
         </StyledComponentsRegistry>

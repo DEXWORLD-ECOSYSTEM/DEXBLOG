@@ -6,27 +6,26 @@ import Link from 'next/link';
 import { useTheme } from 'next-themes';
 
 // --- ICONS ---
-const AdminIcon = () => <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="24" width="24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"></path></svg>;
-const DocsIcon = () => <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="24" width="24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"></path></svg>;
+const GitHubIcon = () => <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" height="20" width="20"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>;
+const FileBracesIcon = () => <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="24" width="24"><path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2ZM18 20H6V4H13V9H18V20ZM9.41 16.41L10.83 15L9.41 13.59L10.12 12.88L12.24 15L10.12 17.12L9.41 16.41ZM14.59 16.41L13.88 17.12L11.76 15L13.88 12.88L14.59 13.59L13.17 15L14.59 16.41Z"></path></svg>;
 const UserIcon = () => <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" height="20" width="20"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"></path></svg>;
 const MenuIcon = () => <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="24" width="24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>;
 const CloseIcon = () => <svg stroke="currentColor" fill="none" strokeWidth="2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round" height="24" width="24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>;
-
-// --- NEW & UPDATED ICONS ---
-const SupportAgentIcon = () => <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="24" width="24"><path d="M20 16.5c0-.28-.22-.5-.5-.5H18c-.28 0-.5.22-.5.5v2c0 .28.22.5.5.5h1.5v.5h-2c-.55 0-1-.45-1-1v-3.5c0-.55.45-1 1-1h2.5c.83 0 1.5.67 1.5 1.5v2c0 .83-.67 1.5-1.5 1.5H18v-1.5zM12 1C7.03 1 3 5.03 3 10v1.5c0 .83.67 1.5 1.5 1.5H6c.83 0 1.5-.67 1.5-1.5V10c0-2.76 2.24-5 5-5s5 2.24 5 5v1h-2v-1c0-1.65-1.35-3-3-3s-3 1.35-3 3v1.5c0 .83.67 1.5 1.5 1.5h1.12c.43.9.98 1.73 1.66 2.44.11.11.23.22.35.32.22.18.46.34.71.48V19c0 1.1-.9 2-2 2H6.5c-.83 0-1.5-.67-1.5-1.5V17H3v.5C3 19.43 4.57 21 6.5 21H12c2.21 0 4-1.79 4-4v-2.3c.53-.33 1-.74 1.4-1.2C18.19 12.55 19 11.36 19 10V4.5C19 2.57 17.43 1 15.5 1h-7C7.67 1 7 1.67 7 2.5V3H5V2.5C5 1.12 6.12 0 7.5 0h7C16.88 0 19 2.12 19 4.5V9c0 1.1-.9 2-2 2h-1V5h-2v6z"></path></svg>;
+const HeadsetIcon = () => <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="24" width="24"><path d="M12 1a9 9 0 0 0-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h4v1h-7v2h6c1.66 0 3-1.34 3-3V10a9 9 0 0 0-9-9z"></path></svg>;
 const SunIcon = () => <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" height="20" width="20"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 .5.5zM8 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 .5 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707z"></path></svg>;
 const MoonIcon = () => <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" height="20" width="20"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path></svg>;
 
-const FloatingActionButton = () => {
+const CoreNav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Reverted to the classic UserIcon
   const actions = [
-    { id: 'login', href: '/admin/login', icon: <UserIcon />, label: 'Admin Login' },
-    { id: 'admin', href: '/admin', icon: <AdminIcon />, label: 'Go to Admin Panel' },
-    { id: 'docs', href: '/docs', icon: <DocsIcon />, label: 'Read Documentation' },
-    { id: 'support', href: '/support', icon: <SupportAgentIcon />, label: 'Contact Support' },
+    { id: 'login', href: '/user/login', icon: <UserIcon />, label: 'Creator Login' },
+    { id: 'admin', href: '/admin/login', icon: <GitHubIcon />, label: 'Admin Login' },
+    { id: 'support', href: '/support', icon: <HeadsetIcon />, label: 'Contact Support' },
+    { id: 'docs', href: '/docs', icon: <FileBracesIcon />, label: 'Read Documentation' },
   ];
 
   useEffect(() => {
@@ -137,12 +136,13 @@ const StyledWrapper = styled.div`
     visibility: visible;
   }
   
-  /* Staggered spring animation for opening */
-  .is-open #support { transition-delay: 0.0s; transform: translate(-50%, calc(-50% - 310px)) scale(1); }
-  .is-open #docs { transition-delay: 0.05s; transform: translate(-50%, calc(-50% - 250px)) scale(1); }
-  .is-open #admin { transition-delay: 0.1s; transform: translate(-50%, calc(-50% - 190px)) scale(1); }
-  .is-open #login { transition-delay: 0.15s; transform: translate(-50%, calc(-50% - 130px)) scale(1); }
-  .is-open #theme-toggle { transition-delay: 0.2s; transform: translate(-50%, calc(-50% - 70px)) scale(1); }
+  /* Staggered spring animation for opening - NEW ORDER */
+  .is-open #login { transition-delay: 0.0s; transform: translate(-50%, calc(-50% - 310px)) scale(1); }        /* 1st - Top */
+  .is-open #admin { transition-delay: 0.05s; transform: translate(-50%, calc(-50% - 250px)) scale(1); }       /* 2nd */
+  .is-open #support { transition-delay: 0.1s; transform: translate(-50%, calc(-50% - 190px)) scale(1); }     /* 3rd */
+  .is-open #docs { transition-delay: 0.15s; transform: translate(-50%, calc(-50% - 130px)) scale(1); }        /* 4th */
+  .is-open #theme-toggle { transition-delay: 0.2s; transform: translate(-50%, calc(-50% - 70px)) scale(1); } /* 5th - Bottom */
+
 
   /* --- Dark Mode Contrast --- */
   html.dark & #main-fab,
@@ -156,4 +156,4 @@ const StyledWrapper = styled.div`
   }
 `;
 
-export default FloatingActionButton;
+export default CoreNav;
