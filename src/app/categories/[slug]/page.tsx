@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
 import { getCategoryBySlug, getPosts } from '@/lib/data';
 import { SiteHeader } from '@/components/site-header';
@@ -5,17 +6,17 @@ import { SiteFooter } from '@/components/site-footer';
 import { PostCard } from '@/components/post-card';
 import { PaginationComponent } from '@/components/pagination-component';
 
-export default function CategoryPage({ params, searchParams }: { params: { slug: string }, searchParams: { page?: string } }) {
-  const category = getCategoryBySlug(params.slug);
+export default async function CategoryPage({ params: { slug }, searchParams: { page } }: { params: { slug: string }, searchParams: { page?: string } }) {
+  const category = getCategoryBySlug(slug);
 
   if (!category) {
     notFound();
   }
   
-  const page = Number(searchParams.page) || 1;
+  const currentPage = Number(page) || 1;
   const limit = 6;
-  const allPostsInCategory = getPosts({ categorySlug: params.slug });
-  const posts = allPostsInCategory.slice((page - 1) * limit, page * limit);
+  const allPostsInCategory = getPosts({ categorySlug: slug });
+  const posts = allPostsInCategory.slice((currentPage - 1) * limit, currentPage * limit);
   const totalPages = Math.ceil(allPostsInCategory.length / limit);
 
 
@@ -37,7 +38,9 @@ export default function CategoryPage({ params, searchParams }: { params: { slug:
                 ))}
               </div>
               <div className="mt-12">
-                <PaginationComponent totalPages={totalPages} />
+                <Suspense fallback={<div>Loading...</div>}>
+                  <PaginationComponent totalPages={totalPages} />
+                </Suspense>
               </div>
             </>
           ) : (

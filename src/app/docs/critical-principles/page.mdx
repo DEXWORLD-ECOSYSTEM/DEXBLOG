@@ -1,0 +1,24 @@
+# Princípios Críticos de Desenvolvimento
+
+Estes são os princípios e regras fundamentais que **todos os desenvolvedores** devem seguir, sem exceção. A adesão a estas diretrizes é crucial para manter a estabilidade do código, evitar quebras em produção e garantir uma colaboração eficiente entre as equipes.
+
+## 1. Controle de Versão: A Regra de Ouro
+
+**NUNCA faça push diretamente para a branch `main` ou `developer`.**
+
+Todo o trabalho deve ser feito em uma *feature branch* separada, criada a partir da branch `developer`.
+
+### Fluxo de Trabalho Obrigatório:
+
+1.  **Crie uma nova branch:** A partir da `developer`, crie uma branch descritiva para a sua tarefa (ex: `feature/add-user-authentication` ou `fix/login-button-bug`).
+    ```bash
+    git checkout developer
+    git pull origin developer
+    git checkout -b feature/sua-nova-funcionalidade
+    ```
+
+2.  **Desenvolva e comite:** Trabalhe na sua branch, fazendo commits pequenos e atômicos.
+
+3.  **Abra um Pull Request (PR):** Quando o trabalho estiver concluído e testado, abra um Pull Request da sua branch para a `developer`.
+
+4.  **Aguarde a Revisão:** O seu código deve ser revisado e aprovado por, no mínimo, um outro desenvolvedor antes de ser mesclado.

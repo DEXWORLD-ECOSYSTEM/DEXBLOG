@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
 import { getTagBySlug, getPosts } from '@/lib/data';
 import { SiteHeader } from '@/components/site-header';
@@ -5,17 +6,17 @@ import { SiteFooter } from '@/components/site-footer';
 import { PostCard } from '@/components/post-card';
 import { PaginationComponent } from '@/components/pagination-component';
 
-export default function TagPage({ params, searchParams }: { params: { slug: string }, searchParams: { page?: string } }) {
-  const tag = getTagBySlug(params.slug);
+export default async function TagPage({ params: { slug }, searchParams: { page } }: { params: { slug: string }, searchParams: { page?: string } }) {
+  const tag = getTagBySlug(slug);
 
   if (!tag) {
     notFound();
   }
   
-  const page = Number(searchParams.page) || 1;
+  const currentPage = Number(page) || 1;
   const limit = 6;
-  const allPostsWithTag = getPosts({ tagSlug: params.slug });
-  const posts = allPostsWithTag.slice((page - 1) * limit, page * limit);
+  const allPostsWithTag = getPosts({ tagSlug: slug });
+  const posts = allPostsWithTag.slice((currentPage - 1) * limit, currentPage * limit);
   const totalPages = Math.ceil(allPostsWithTag.length / limit);
 
   return (
@@ -36,7 +37,9 @@ export default function TagPage({ params, searchParams }: { params: { slug: stri
                 ))}
               </div>
               <div className="mt-12">
-                <PaginationComponent totalPages={totalPages} />
+                <Suspense fallback={<div>Loading...</div>}>
+                  <PaginationComponent totalPages={totalPages} />
+                </Suspense>
               </div>
             </>
           ) : (

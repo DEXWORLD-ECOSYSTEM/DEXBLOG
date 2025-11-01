@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
 import { PostCard } from '@/components/post-card';
@@ -99,7 +100,9 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-12">
-              <PaginationComponent totalPages={Math.ceil(getPosts({}).length / 6)} />
+              <Suspense fallback={<div>Loading...</div>}>
+                <PaginationComponent totalPages={Math.ceil(getPosts({}).length / 6)} />
+              </Suspense>
             </div>
           </section>
         </div>

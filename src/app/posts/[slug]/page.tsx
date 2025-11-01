@@ -11,8 +11,7 @@ import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselIndicatorGroup } from '@/components/ui/carousel';
 
-export default async function PostPage(props: { params: { slug: string } }) {
-  const { slug } = await props.params;
+export default async function PostPage({ params: { slug } }: { params: { slug: string } }) {
   const post = getPostBySlug(slug);
 
   if (!post) {
