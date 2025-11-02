@@ -39,7 +39,7 @@ export default function Home() {
               <CarouselContent>
                 <CarouselItem>
                   <Link href="#">
-                    <div className="relative h-[90px] w-full overflow-hidden rounded-lg md:h-[90px]">
+                    <div className="relative h-[90px] w-full overflow-hidden rounded-lg md:h-[150px]">
                       <Image
                         src="/images/ads/ad-banner1.png"
                         alt="Advertisement"
@@ -52,7 +52,7 @@ export default function Home() {
                 </CarouselItem>
                 <CarouselItem>
                    <Link href="#">
-                    <div className="relative h-[90px] w-full overflow-hidden rounded-lg md:h-[90px]">
+                    <div className="relative h-[90px] w-full overflow-hidden rounded-lg md:h-[150px]">
                       <Image
                         src="/images/ads/ad-banner2.png"
                         alt="Advertisement 2"

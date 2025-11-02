@@ -318,7 +318,7 @@ const CarouselIndicator = React.forwardRef<
       size="icon"
       variant="ghost"
       className={cn(
-        'h-2 w-2 rounded-full p-0 bg-muted-foreground/50',
+        'h-2 w-2 rounded-full p-0 bg-white/50',
         'data-[active=true]:bg-primary',
         className
       )}
