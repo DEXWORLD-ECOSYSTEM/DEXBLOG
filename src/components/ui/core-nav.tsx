@@ -112,17 +112,23 @@ const CoreNav = () => {
         {/* --- Botão Principal (FAB) --- */}
         <button 
             className={cn(
-                glassmorphismBase,
                 'absolute top-1/2 left-1/2 flex h-12 w-12 items-center justify-center z-10',
                 'transform -translate-x-1/2 -translate-y-1/2',
-                'text-gray-800 dark:text-gray-200',
                 'transition-transform duration-300 ease-in-out',
+                'rounded-full',
+                'orbiting-button', // Animação de órbita sempre ativa
                 isOpen && 'rotate-90'
             )} 
             id="main-fab" 
             aria-label="Toggle quick actions menu" 
             onClick={toggleMenu}>
-          {isOpen ? <CloseIcon /> : <MenuIcon />}
+              <div className={cn(
+                glassmorphismBase,
+                'flex h-full w-full items-center justify-center rounded-full',
+                'text-gray-800 dark:text-gray-200'
+              )}>
+                {isOpen ? <CloseIcon /> : <MenuIcon />}
+              </div>
         </button>
       </div>
     </div>

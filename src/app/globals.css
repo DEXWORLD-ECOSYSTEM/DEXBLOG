@@ -86,3 +86,38 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .orbiting-button {
+    position: relative;
+  }
+  
+  .orbiting-button::before {
+    content: '';
+    position: absolute;
+    z-index: -1; /* Fica atrás do conteúdo */
+    top: 50%;
+    left: 50%;
+    width: calc(100% + 4px); /* Um pouco maior que o botão */
+    height: calc(100% + 4px); /* Um pouco maior que o botão */
+    transform: translate(-50%, -50%);
+    border-radius: inherit; /* Garante que a borda seja redonda */
+    background: conic-gradient(
+      from 0deg,
+      transparent 0% 70%,
+      #e91e63 70% 85%,
+      #ffc107 85% 95%,
+      transparent 95% 100%
+    );
+    animation: orbit 4s linear infinite;
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
