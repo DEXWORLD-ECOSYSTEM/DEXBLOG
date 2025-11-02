@@ -55,7 +55,7 @@ const CoreNav = () => {
 
   return (
     <div className="fixed bottom-8 right-8 z-50">
-      <div className="relative h-14 w-14">
+      <div className="relative h-12 w-12">
         
         {/* --- Botões de Ação --- */}
         {actions.map((action, index) => {
@@ -113,7 +113,7 @@ const CoreNav = () => {
         <button 
             className={cn(
                 glassmorphismBase,
-                'absolute top-1/2 left-1/2 flex h-14 w-14 items-center justify-center z-10',
+                'absolute top-1/2 left-1/2 flex h-12 w-12 items-center justify-center z-10',
                 'transform -translate-x-1/2 -translate-y-1/2',
                 'text-gray-800 dark:text-gray-200',
                 'transition-transform duration-300 ease-in-out',
