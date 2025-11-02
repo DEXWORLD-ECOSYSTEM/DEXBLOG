@@ -13,6 +13,9 @@ import { format, parseISO } from 'date-fns';
 import Link from 'next/link';
 import { Card } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselIndicatorGroup } from '@/components/ui/carousel';
+import { useRef } from 'react';
+import Autoplay from 'embla-carousel-autoplay';
+import Fade from 'embla-carousel-fade';
 
 export default function PostPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
@@ -27,6 +30,10 @@ export default function PostPage({ params }: { params: { slug: string } }) {
   const tags = getTagsByIds(post.tagIds);
   const comments = getCommentsByPostId(post.id);
 
+  const fadePlugin1 = useRef(Fade());
+  const fadePlugin2 = useRef(Fade());
+  const fadePlugin3 = useRef(Fade());
+
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
@@ -38,8 +45,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
               opts={{
                 loop: true,
               }}
-              autoplay
-              autoplayDelay={5000}
+              plugins={[fadePlugin1.current, Autoplay({ delay: 5000 })]}
             >
               <CarouselContent>
                 <CarouselItem>
@@ -148,8 +154,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
                   opts={{
                     loop: true,
                   }}
-                  autoplay
-                  autoplayDelay={5000}
+                  plugins={[fadePlugin2.current, Autoplay({ delay: 5000 })]}
                 >
                   <CarouselContent>
                     <CarouselItem>
@@ -191,8 +196,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
                   opts={{
                     loop: true,
                   }}
-                  autoplay
-                  autoplayDelay={7000}
+                  plugins={[fadePlugin3.current, Autoplay({ delay: 7000 })]}
                 >
                   <CarouselContent>
                     <CarouselItem>
