@@ -1,43 +1,73 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import { Carousel, CarouselContent, CarouselItem, CarouselIndicatorGroup } from '@/components/ui/carousel';
 
 const creators = [
   {
+    name: 'Creator 1',
+    postTitle: 'Post title 1',
+    avatarUrl: '/images/creators/1.jpg',
+    postUrl: '#',
+  },
+  {
     name: 'Juca Kfouri',
     postTitle: 'O golpe em gestação no Santos',
-    avatarUrl: '/images/ads/ad-air-drop.png',
+    avatarUrl: '/images/creators/2.png',
     postUrl: '#',
   },
   {
     name: 'Paulo Camargo',
     postTitle: 'Você é pago para errar; só acerte mais do que erre',
-    avatarUrl: '/images/ads/ad-air-drop.png',
+    avatarUrl: '/images/creators/3.png',
     postUrl: '#',
   },
   {
     name: 'TixaNews',
     postTitle: "'O que de errado temos feito?', pergunta Gilmar",
-    avatarUrl: '/images/ads/ad-air-drop.png',
+    avatarUrl: '/images/creators/4.png',
     postUrl: '#',
   },
   {
     name: 'Milly Lacombe',
     postTitle: 'Paulistão feminino oferece futebol de alto nível',
-    avatarUrl: '/images/ads/ad-air-drop.png',
+    avatarUrl: '/images/creators/5.png',
     postUrl: '#',
   },
   {
-    name: 'Creator 5',
+    name: 'Creator 6',
     postTitle: 'Another post title',
-    avatarUrl: '/images/ads/ad-air-drop.png',
+    avatarUrl: '/images/creators/6.png',
     postUrl: '#',
   },
     {
-    name: 'Creator 6',
+    name: 'Creator 7',
     postTitle: 'Another post title',
-    avatarUrl: '/images/ads/ad-air-drop.png',
+    avatarUrl: '/images/creators/7.png',
+    postUrl: '#',
+  },
+  {
+    name: 'Creator 8',
+    postTitle: 'Another post title',
+    avatarUrl: '/images/creators/8.png',
+    postUrl: '#',
+  },
+  {
+    name: 'Creator 9',
+    postTitle: 'Another post title',
+    avatarUrl: '/images/creators/9.png',
+    postUrl: '#',
+  },
+  {
+    name: 'Creator 10',
+    postTitle: 'Another post title',
+    avatarUrl: '/images/creators/10.png',
+    postUrl: '#',
+  },
+  {
+    name: 'Creator 11',
+    postTitle: 'Another post title',
+    avatarUrl: '/images/creators/11.png',
     postUrl: '#',
   },
 ];
@@ -57,6 +87,8 @@ export function CreatorsListComponent() {
                   align: "start",
                   loop: true,
                 }}
+                autoplay
+                autoplayDelay={5000}
                 className="w-full"
               >
                 <CarouselContent className="-ml-4">
@@ -82,6 +114,7 @@ export function CreatorsListComponent() {
                     </CarouselItem>
                   ))}
                 </CarouselContent>
+                <CarouselIndicatorGroup />
               </Carousel>
             </div>
              <div className="relative">
