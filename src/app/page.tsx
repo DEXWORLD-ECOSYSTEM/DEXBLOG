@@ -1,6 +1,8 @@
 'use client';
 
-import { Suspense } from 'react';
+import { Suspense, useRef } from 'react';
+import Autoplay from 'embla-carousel-autoplay';
+import Fade from 'embla-carousel-fade';
 import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
 import { PostCard } from '@/components/post-card';
@@ -17,6 +19,9 @@ import { VideosSection } from '@/components/videos-section';
 export default function Home() {
   const posts = getPosts({ page: 1, limit: 6 });
   const featuredPost = getFeaturedPost();
+  const fadePlugin = useRef(
+    Fade()
+  )
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -29,8 +34,7 @@ export default function Home() {
               opts={{
                 loop: true,
               }}
-              autoplay
-              autoplayDelay={5000}
+              plugins={[fadePlugin.current, Autoplay({ delay: 5000 })]}
             >
               <CarouselContent>
                 <CarouselItem>
