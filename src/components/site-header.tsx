@@ -25,7 +25,7 @@ const navLinks = [
 
 const Logo = () => (
   <Link href="/" className="font-headline text-2xl font-bold">
-    Blogwise
+    DEX World
   </Link>
 );
 
