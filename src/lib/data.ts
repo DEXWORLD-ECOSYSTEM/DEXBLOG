@@ -1,3 +1,4 @@
+
 import type { Post, Author, Category, Tag, Comment } from './types';
 
 const authors: Author[] = [
@@ -94,7 +95,62 @@ As AI models become more powerful, their integration into our development proces
     categoryId: '1',
     tagIds: ['4'],
   },
-  // ... other posts
+  {
+    id: '3',
+    slug: 'a-guide-to-component-driven-development',
+    title: 'A Guide to Component-Driven Development',
+    excerpt: 'Learn how to build UIs in a modular and scalable way with component-driven development principles.',
+    content: 'Component-driven development is a methodology that focuses on building user interfaces from the bottom up, starting with individual components.',
+    imageUrl: 'https://picsum.photos/seed/post3/600/400',
+    imageHint: 'abstract block puzzle',
+    publishedAt: '2024-05-10T09:00:00Z',
+    isFeatured: false,
+    authorId: '2',
+    categoryId: '1',
+    tagIds: ['1', '3'],
+  },
+  {
+    id: '4',
+    slug: 'boost-your-productivity-with-these-simple-hacks',
+    title: 'Boost Your Productivity with These Simple Hacks',
+    excerpt: 'Discover simple yet effective techniques to manage your time, stay focused, and get more done.',
+    content: 'Productivity is not about working harder, but smarter. This article explores several techniques to improve your focus and efficiency.',
+    imageUrl: 'https://picsum.photos/seed/post4/600/400',
+    imageHint: 'person working on laptop',
+    publishedAt: '2024-05-08T11:00:00Z',
+    isFeatured: false,
+    authorId: '1',
+    categoryId: '2',
+    tagIds: ['5'],
+  },
+  {
+    id: '5',
+    slug: 'the-art-of-minimalist-living',
+    title: 'The Art of Minimalist Living',
+    excerpt: 'Find joy in simplicity. A guide to decluttering your life and focusing on what truly matters.',
+    content: 'Minimalism is a lifestyle that helps people question what things add value to their lives. By clearing the clutter, you can make room for more: more time, more passion, more experiences.',
+    imageUrl: 'https://picsum.photos/seed/post5/600/400',
+    imageHint: 'minimalist interior design',
+    publishedAt: '2024-05-05T16:00:00Z',
+    isFeatured: false,
+    authorId: '2',
+    categoryId: '3',
+    tagIds: ['3'],
+  },
+  {
+    id: '6',
+    slug: 'getting-started-with-nextjs-15',
+    title: 'Getting Started with Next.js 15',
+    excerpt: 'A beginner-friendly tutorial on setting up a new project with the latest version of Next.js.',
+    content: 'Next.js 15 brings several new features and improvements. This tutorial will walk you through the process of creating a new Next.js app and exploring its new capabilities.',
+    imageUrl: 'https://picsum.photos/seed/post6/600/400',
+    imageHint: 'Next.js logo',
+    publishedAt: '2024-05-02T18:00:00Z',
+    isFeatured: false,
+    authorId: '1',
+    categoryId: '1',
+    tagIds: ['2'],
+  }
 ];
 
 const comments: Comment[] = [
@@ -122,9 +178,44 @@ const comments: Comment[] = [
 ];
 
 // Data fetching functions
-export function getPosts(args?: { page?: number; limit?: number; categorySlug?: string; tagSlug?: string }): Post[] {
-  // ... implementation
-  return [];
+export function getPosts(args: { page?: number; limit?: number; categorySlug?: string; tagSlug?: string } = {}): Post[] {
+  const { page, limit, categorySlug, tagSlug } = args;
+
+  let filteredPosts = posts;
+
+  // Filter by category
+  if (categorySlug) {
+    const category = getCategoryBySlug(categorySlug);
+    if (category) {
+      filteredPosts = filteredPosts.filter(post => post.categoryId === category.id);
+    } else {
+      return [];
+    }
+  }
+
+  // Filter by tag
+  if (tagSlug) {
+    const tag = getTagBySlug(tagSlug);
+    if (tag) {
+      filteredPosts = filteredPosts.filter(post => post.tagIds.includes(tag.id));
+    } else {
+      return [];
+    }
+  }
+
+  // Sort by date descending
+  const sortedPosts = [...filteredPosts].sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
+
+  // If no pagination is requested, return all filtered & sorted posts
+  if (page === undefined || limit === undefined) {
+    return sortedPosts;
+  }
+
+  // Apply pagination
+  const startIndex = (page - 1) * limit;
+  const endIndex = startIndex + limit;
+
+  return sortedPosts.slice(startIndex, endIndex);
 }
 
 export function getPostBySlug(slug: string): Post | undefined {
