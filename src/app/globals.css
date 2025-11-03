@@ -81,7 +81,7 @@
     bottom: -1px;
     border-radius: 50%;
     background: conic-gradient(from 180deg at 50% 50%, #2196f3, #673ab7, #e91e63, #ffc107, #2196f3);
-    animation: orbit 4s linear infinite;
+    animation: orbit 6s linear infinite;
     z-index: -1;
   }
 
