@@ -45,7 +45,7 @@ const CoreNav = () => {
   
   const glassmorphismBase = cn(
     'border rounded-full',
-    'bg-white/20 dark:bg-black/20',
+    'bg-white/40 dark:bg-black/40',
     'backdrop-blur-lg',
     'border-white/30 dark:border-white/10',
     'shadow-lg',
