@@ -42,7 +42,7 @@ export default function Home() {
                     <div className="relative h-[90px] w-full overflow-hidden rounded-lg md:h-[150px]">
                       <Image
                         src="/images/ads/ad-banner1.png"
-                        alt="Advertisement"
+                        alt="Anúncio"
                         fill
                         className="object-cover"
                         data-ai-hint="advertisement banner"
@@ -55,7 +55,7 @@ export default function Home() {
                     <div className="relative h-[90px] w-full overflow-hidden rounded-lg md:h-[150px]">
                       <Image
                         src="/images/ads/ad-banner2.png"
-                        alt="Advertisement 2"
+                        alt="Anúncio 2"
                         fill
                         className="object-cover"
                         data-ai-hint="product promotion"
@@ -86,13 +86,13 @@ export default function Home() {
                     </Link>
                   </div>
                   <div className="p-8 md:w-1/2 flex flex-col justify-center">
-                    <Badge variant="outline" className="mb-2 w-fit">Featured Post</Badge>
+                    <Badge variant="outline" className="mb-2 w-fit">Post em Destaque</Badge>
                     <h2 className="font-headline text-3xl md:text-4xl font-bold mb-4">
                       <Link href={`/posts/${featuredPost.slug}`}>{featuredPost.title}</Link>
                     </h2>
                     <p className="text-muted-foreground mb-4">{featuredPost.excerpt}</p>
                     <Link href={`/posts/${featuredPost.slug}`} className="text-primary hover:underline font-semibold">
-                      Read More
+                      Leia Mais
                     </Link>
                   </div>
                 </div>
@@ -103,14 +103,14 @@ export default function Home() {
           <CreatorsListComponent />
 
           <section>
-            <h2 className="font-headline text-3xl font-bold mb-8">Latest Articles</h2>
-            <div className="grid grid-cols-3 gap-8">
+            <h2 className="font-headline text-3xl font-bold mb-8">Artigos Recentes</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {posts.map((post) => (
                 <PostCard key={post.id} post={post} />
               ))}
             </div>
             <div className="mt-12">
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<div>Carregando...</div>}>
                 <PaginationComponent totalPages={Math.ceil(getPosts({}).length / 6)} />
               </Suspense>
             </div>
