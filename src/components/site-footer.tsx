@@ -7,7 +7,7 @@ export function SiteFooter() {
   const version = packageJson.version;
 
   return (
-    <footer className="border-t bg-background">
+    <footer className="border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/20">
       {/* Adicionado `relative` para servir de referência ao elemento absoluto */}
       <div className="container relative mx-auto px-4 py-8">
         {/* MODIFICADO: md:justify-end para alinhar a versão à direita */}

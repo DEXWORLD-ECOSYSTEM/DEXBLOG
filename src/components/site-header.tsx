@@ -59,7 +59,7 @@ export function SiteHeader() {
   const [isSearchOpen, setSearchOpen] = useState(false); // Estado para a busca mobile
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/20">
       <div className="container mx-auto flex h-16 items-center px-4">
         {/* === LAYOUT DESKTOP === */}
         <div className="hidden w-full items-center md:flex">

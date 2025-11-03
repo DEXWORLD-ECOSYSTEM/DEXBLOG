@@ -16,6 +16,9 @@ export default {
       },
     },
     extend: {
+      backdropBlur: {
+        '4px': '4px',
+      },
       fontFamily: {
         body: ['var(--font-inter)', 'sans-serif'],
         headline: ['var(--font-space-grotesk)', 'sans-serif'],
