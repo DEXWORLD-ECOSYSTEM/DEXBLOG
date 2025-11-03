@@ -56,7 +56,7 @@ export default function Home() {
 
           {featuredPost && (
             <section className="mb-12">
-              <Card className="overflow-hidden">
+              <Card className="overflow-hidden bg-brand-dark shadow-glow border border-brand-cyan/30 rounded-lg">
                 <div className="md:flex">
                   <div className="md:w-1/2">
                     <Link href={`/posts/${featuredPost.slug}`}>
@@ -72,12 +72,24 @@ export default function Home() {
                     </Link>
                   </div>
                   <div className="p-8 md:w-1/2 flex flex-col justify-center">
-                    <Badge variant="outline" className="mb-2 w-fit">Post em Destaque</Badge>
-                    <h2 className="font-headline text-3xl md:text-4xl font-bold mb-4">
-                      <Link href={`/posts/${featuredPost.slug}`}>{featuredPost.title}</Link>
+                    <Badge
+                      variant="outline"
+                      className="mb-2 w-fit border-brand-cyan/50 text-brand-cyan bg-transparent"
+                    >
+                      Post em Destaque
+                    </Badge>
+                    <h2 className="font-headline text-3xl md:text-4xl font-bold mb-4 text-white">
+                      <Link href={`/posts/${featuredPost.slug}`}>
+                        {featuredPost.title}
+                      </Link>
                     </h2>
-                    <p className="text-muted-foreground mb-4">{featuredPost.excerpt}</p>
-                    <Link href={`/posts/${featuredPost.slug}`} className="text-primary hover:underline font-semibold">
+                    <p className="text-brand-secondary mb-4">
+                      {featuredPost.excerpt}
+                    </p>
+                    <Link
+                      href={`/posts/${featuredPost.slug}`}
+                      className="text-brand-primary hover:underline font-semibold"
+                    >
                       Leia Mais
                     </Link>
                   </div>

@@ -16,7 +16,7 @@ export function PostCard({ post }: PostCardProps) {
   const category = getCategoryById(post.categoryId);
 
   return (
-    <Card className="flex flex-col overflow-hidden">
+    <Card className="flex flex-col overflow-hidden bg-brand-dark shadow-glow border border-brand-cyan/30 h-full">
       <Link href={`/posts/${post.slug}`} className="block">
         <div className="relative h-48 w-full">
           <Image
@@ -30,16 +30,19 @@ export function PostCard({ post }: PostCardProps) {
       </Link>
       <CardHeader>
         {category && (
-          <Badge variant="secondary" className="mb-2 w-fit">
+          <Badge
+            variant="outline"
+            className="mb-2 w-fit border-brand-cyan/50 text-brand-cyan bg-transparent"
+          >
             <Link href={`/categories/${category.slug}`}>{category.name}</Link>
           </Badge>
         )}
-        <h3 className="font-headline text-xl font-semibold">
+        <h3 className="font-headline text-xl font-semibold text-white">
           <Link href={`/posts/${post.slug}`}>{post.title}</Link>
         </h3>
       </CardHeader>
       <CardContent className="flex-grow">
-        <p className="text-muted-foreground line-clamp-3">{post.excerpt}</p>
+        <p className="text-brand-secondary line-clamp-3">{post.excerpt}</p>
       </CardContent>
       <CardFooter>
         <div className="flex items-center space-x-3">
@@ -50,8 +53,8 @@ export function PostCard({ post }: PostCardProps) {
             </Avatar>
           )}
           <div>
-            <p className="text-sm font-medium">{author?.name}</p>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-sm font-medium text-white">{author?.name}</p>
+            <p className="text-xs text-brand-secondary">
               {format(parseISO(post.publishedAt), 'MMMM d, yyyy')}
             </p>
           </div>

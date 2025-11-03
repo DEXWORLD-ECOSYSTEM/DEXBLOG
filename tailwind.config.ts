@@ -75,6 +75,15 @@ export default {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))',
         },
+        brand: {
+          dark: '#0D1117',
+          primary: '#1D9BF0',
+          cyan: '#38A1F3',
+          secondary: '#8B949E',
+        },
+      },
+      boxShadow: {
+        'glow': '0 0 15px 0 rgba(56, 161, 243, 0.4)',
       },
       borderRadius: {
         lg: 'var(--radius)',

@@ -1,4 +1,3 @@
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { Carousel, CarouselContent, CarouselItem, CarouselIndicatorGroup } from '@/components/ui/carousel';
@@ -40,7 +39,7 @@ const creators = [
     avatarUrl: '/images/creators/6.png',
     postUrl: '#',
   },
-    {
+  {
     name: 'Creator 7',
     postTitle: 'Another post title',
     avatarUrl: '/images/creators/7.png',
@@ -75,8 +74,8 @@ const creators = [
 export function CreatorsListComponent() {
   return (
     <section className="my-12">
-      <h2 className="font-headline text-3xl font-bold mb-8 text-center">Nossos Criadores</h2>
-      <div className="glass-effect px-4 py-6 md:p-6">
+      <h2 className="font-headline text-3xl font-bold mb-8 text-center text-white">Nossos Criadores</h2>
+      <div className="bg-brand-dark shadow-glow border border-brand-cyan/30 rounded-lg px-4 py-6 md:p-6">
         <Carousel
           opts={{
             align: "start",
@@ -91,7 +90,7 @@ export function CreatorsListComponent() {
               <CarouselItem key={index} className="pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/5 group">
                 <Link 
                   href={creator.postUrl} 
-                  className="flex items-center space-x-4 p-4 rounded-lg transition-colors hover:bg-white/10"
+                  className="flex items-center space-x-4 p-4 rounded-lg transition-colors hover:bg-brand-cyan/10"
                 >
                   <div className="flex-shrink-0">
                     <Image
@@ -102,9 +101,9 @@ export function CreatorsListComponent() {
                       height={64}
                     />
                   </div>
-                  <div className="flex h-16 flex-col justify-center">
-                    <p className="text-sm font-bold text-primary">{creator.name}</p>
-                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors">{creator.postTitle}</p>
+                  <div className="flex h-16 flex-col justify-center overflow-hidden">
+                    <p className="text-sm font-bold text-white truncate">{creator.name}</p>
+                    <p className="text-sm text-brand-secondary group-hover:text-white/80 transition-colors truncate">{creator.postTitle}</p>
                   </div>
                 </Link>
               </CarouselItem>
