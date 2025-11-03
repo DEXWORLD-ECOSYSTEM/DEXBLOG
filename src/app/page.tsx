@@ -19,9 +19,8 @@ import { VideosSection } from '@/components/videos-section';
 export default function Home() {
   const posts = getPosts({ page: 1, limit: 6 });
   const featuredPost = getFeaturedPost();
-  const fadePlugin = useRef(
-    Fade()
-  )
+  const fadePlugin = useRef(Fade());
+  const bannerImages = Array.from({ length: 10 }, (_, i) => `/images/ads/banner/${i + 1}.png`);
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -29,40 +28,27 @@ export default function Home() {
       <main className="flex-1">
         <div className="container mx-auto px-4 py-8">
           <section className="mb-12">
-             <Carousel
+            <Carousel
               className="w-full"
-              opts={{
-                loop: true,
-              }}
+              opts={{ loop: true }}
               plugins={[fadePlugin.current, Autoplay({ delay: 5000 })]}
             >
               <CarouselContent>
-                <CarouselItem>
-                  <Link href="#">
-                    <div className="relative h-[90px] w-full overflow-hidden rounded-lg md:h-[150px]">
-                      <Image
-                        src="/images/ads/ad-banner1.png"
-                        alt="Anúncio"
-                        fill
-                        className="object-cover"
-                        data-ai-hint="advertisement banner"
-                      />
-                    </div>
-                  </Link>
-                </CarouselItem>
-                <CarouselItem>
-                   <Link href="#">
-                    <div className="relative h-[90px] w-full overflow-hidden rounded-lg md:h-[150px]">
-                      <Image
-                        src="/images/ads/ad-banner2.png"
-                        alt="Anúncio 2"
-                        fill
-                        className="object-cover"
-                        data-ai-hint="product promotion"
-                      />
-                    </div>
-                  </Link>
-                </CarouselItem>
+                {bannerImages.map((src, index) => (
+                  <CarouselItem key={index}>
+                    <Link href="#">
+                      <div className="relative h-[90px] w-full overflow-hidden rounded-lg md:h-[150px]">
+                        <Image
+                          src={src}
+                          alt={`Banner de anúncio ${index + 1}`}
+                          fill
+                          className="object-cover"
+                          priority={index === 0}
+                        />
+                      </div>
+                    </Link>
+                  </CarouselItem>
+                ))}
               </CarouselContent>
               <CarouselIndicatorGroup />
             </Carousel>
