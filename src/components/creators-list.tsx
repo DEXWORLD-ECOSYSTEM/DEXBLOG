@@ -24,7 +24,7 @@ const creators = [
   },
   {
     name: 'TixaNews',
-    postTitle: "'O que de errado temos feito?', pergunta Gilmar",
+    postTitle: "\'O que de errado temos feito?\', pergunta Gilmar",
     avatarUrl: '/images/creators/4.png',
     postUrl: '#',
   },
@@ -74,55 +74,47 @@ const creators = [
 
 export function CreatorsListComponent() {
   return (
-    <section className="bg-gray-900 py-8">
-        <div className="container mx-auto px-4">
-            <div className="relative">
-                <div className="absolute inset-0 flex items-center" aria-hidden="true">
-                    <div className="w-full border-t border-primary"></div>
-                </div>
-            </div>
-            <div className="py-8">
-              <Carousel
-                opts={{
-                  align: "start",
-                  loop: true,
-                }}
-                autoplay
-                autoplayDelay={5000}
-                className="w-full"
-              >
-                <CarouselContent className="-ml-4">
-                  {creators.map((creator, index) => (
-                    <CarouselItem key={index} className="pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
-                      <div className="flex items-center space-x-4 p-4">
-                        <div className="flex-shrink-0">
-                          <Image
-                            className="h-16 w-16 rounded-lg object-cover"
-                            src={creator.avatarUrl}
-                            alt={creator.name}
-                            width={64}
-                            height={64}
-                          />
-                        </div>
-                        <div>
-                          <p className="text-sm font-bold text-red-500">{creator.name}</p>
-                          <Link href={creator.postUrl}>
-                            <p className="text-sm text-gray-400 hover:underline">{creator.postTitle}</p>
-                          </Link>
-                        </div>
-                      </div>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselIndicatorGroup />
-              </Carousel>
-            </div>
-             <div className="relative">
-                <div className="absolute inset-0 flex items-center" aria-hidden="true">
-                    <div className="w-full border-t border-gray-700"></div>
-                </div>
-            </div>
-        </div>
+    <section className="my-12">
+      <h2 className="font-headline text-3xl font-bold mb-8 text-center">Nossos Criadores</h2>
+      <div className="glass-effect px-4 py-6 md:p-6">
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          autoplay
+          autoplayDelay={5000}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-4">
+            {creators.map((creator, index) => (
+              <CarouselItem key={index} className="pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/5 group">
+                <Link 
+                  href={creator.postUrl} 
+                  className="flex items-center space-x-4 p-4 rounded-lg transition-colors hover:bg-white/10"
+                >
+                  <div className="flex-shrink-0">
+                    <Image
+                      className="h-16 w-16 rounded-lg object-cover"
+                      src={creator.avatarUrl}
+                      alt={creator.name}
+                      width={64}
+                      height={64}
+                    />
+                  </div>
+                  <div className="flex h-16 flex-col justify-center">
+                    <p className="text-sm font-bold text-primary">{creator.name}</p>
+                    <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors">{creator.postTitle}</p>
+                  </div>
+                </Link>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="mt-4">
+            <CarouselIndicatorGroup />
+          </div>
+        </Carousel>
+      </div>
     </section>
   );
 }
