@@ -6,101 +6,52 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
-
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
-
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 222 47% 11%;
+    --background: 224 71% 4%;
     --foreground: 210 40% 98%;
-
-    --card: 222 47% 16%;
+    --card: 224 71% 6%;
     --card-foreground: 210 40% 98%;
-
-    --popover: 222 47% 16%;
+    --popover: 224 71% 8%;
     --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 222 47% 25%;
+    --primary: 186 100% 50%;
+    --primary-foreground: 224 71% 4%;
+    --secondary: 215 9% 64%;
     --secondary-foreground: 210 40% 98%;
-
-    --muted: 222 47% 25%;
-    --muted-foreground: 220 14% 65%;
-
-    --accent: 222 47% 25%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 222 47% 22%;
-    --input: 222 47% 22%;
-    
-    --ring: 221 83% 53%;
+    --muted: 215 9% 20%;
+    --muted-foreground: 215 9% 55%;
+    --accent: 186 100% 50%;
+    --accent-foreground: 224 71% 4%;
+    --border: 186 100% 20%;
+    --input: 186 100% 25%;
+    --ring: 186 100% 50%;
   }
+}
 
+@layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
-  }
-
-  .orbiting-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 50%;
-    background: conic-gradient(from 180deg at 50% 50%, #00ffffcc, #ff00ffcc, #ff69b4cc, #ffff00cc, #00ffffcc);
-    animation: orbit 8s linear infinite;
-    z-index: -1;
-  }
-
-  @keyframes orbit {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  .glass-effect {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: var(--radius);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   }
 }
