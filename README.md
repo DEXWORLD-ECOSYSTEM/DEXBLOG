@@ -20,6 +20,57 @@ A interface do DEX BLOG foi projetada para ser limpa, moderna e responsiva, com 
 | Tema Claro (Light Mode)                                                                     | Tema Escuro (Dark Mode)                                                                     |
 | :------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------ |
 | ![Captura de tela de 2025-11-04 14-28-41](https://github.com/user-attachments/assets/e277eb1b-964f-4bc7-be61-238d3b169d36) | ![Captura de tela de 2025-11-04 14-28-54](https://github.com/user-attachments/assets/01909ab5-f1cb-403b-985a-578e13cda43c) |
+
+### 🖌️ Paletas de Cores
+
+#### 1. ☀️ Tema Padrão (Light Mode)
+
+Este é o tema padrão, aplicado ao `:root`.
+
+| Variável               | Função no Tema                        | Valor (HSL)         |
+| ---------------------- | ------------------------------------- | ------------------- |
+| `--background`         | Fundo principal da página.            | `0 0% 100%`         |
+| `--foreground`         | Texto principal.                      | `222.2 84% 4.9%`    |
+| `--card`               | Fundo de componentes (cards).         | `0 0% 100%`         |
+| `--card-foreground`    | Texto dentro de cards.                | `222.2 84% 4.9%`    |
+| `--popover`            | Fundo de menus flutuantes.            | `0 0% 100%`         |
+| `--popover-foreground` | Texto em menus flutuantes.            | `222.2 84% 4.9%`    |
+| `--primary`            | Cor de destaque (botões, links).      | `222.2 47.4% 11.2%` |
+| `--primary-foreground` | Texto sobre a cor primária.           | `210 40% 98%`       |
+| `--secondary`          | Cor para elementos secundários.       | `210 40% 96.1%`     |
+| `--secondary-foreground`| Texto sobre a cor secundária.         | `222.2 47.4% 11.2%` |
+| `--muted`              | Cor para elementos de baixa prioridade. | `210 40% 96.1%`     |
+| `--muted-foreground`   | Texto silenciado (placeholders).      | `215.4 16.3% 46.9%` |
+| `--accent`             | Cor para destacar itens selecionados. | `210 40% 96.1%`     |
+| `--accent-foreground`  | Texto sobre a cor de destaque.       | `222.2 47.4% 11.2%` |
+| `--border`             | Cor padrão para bordas.               | `214.3 31.8% 91.4%` |
+| `--input`              | Cor da borda de campos de input.      | `214.3 31.8% 91.4%` |
+| `--ring`               | Cor do anel de foco (ao usar TAB).    | `222.2 84% 4.9%`    |
+
+#### 2. 🌙 Tema Escuro (Dark Mode)
+
+Estes valores são aplicados quando o seletor `.dark` está ativo.
+
+| Variável               | Função no Tema                        | Valor Proposto (HSL) |
+| ---------------------- | ------------------------------------- | -------------------- |
+| `--background`         | Fundo principal da página.            | `224 71% 4%`         |
+| `--foreground`         | Texto principal.                      | `210 40% 98%`        |
+| `--card`               | Fundo de componentes (cards).         | `224 71% 6%`         |
+| `--card-foreground`    | Texto dentro de cards.                | `210 40% 98%`        |
+| `--popover`            | Fundo de menus flutuantes.            | `224 71% 8%`         |
+| `--popover-foreground` | Texto em menus flutuantes.            | `210 40% 98%`        |
+| `--primary`            | Cor de destaque (botões, links).      | `186 100% 50%`       |
+| `--primary-foreground` | Texto sobre a cor primária.           | `224 71% 4%`         |
+| `--secondary`          | Cor para elementos secundários.       | `215 9% 64%`         |
+| `--secondary-foreground`| Texto sobre a cor secundária.         | `210 40% 98%`        |
+| `--muted`              | Cor para elementos de baixa prioridade. | `215 9% 20%`         |
+| `--muted-foreground`   | Texto silenciado (placeholders).      | `215 9% 55%`         |
+| `--accent`             | Cor para destacar itens selecionados. | `186 100% 50%`       |
+| `--accent-foreground`  | Texto sobre a cor de destaque.       | `224 71% 4%`         |
+| `--border`             | Cor padrão para bordas.               | `186 100% 20%`       |
+| `--input`              | Cor da borda de campos de input.      | `186 100% 25%`       |
+| `--ring`               | Cor do anel de foco (ao usar TAB).    | `186 100% 50%`       |
+
 ---
 
 ## Tecnologias e Arquitetura
