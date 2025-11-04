@@ -67,25 +67,22 @@ const CoreNav = () => {
                     : 'translate(-50%, -50%) scale(0.5)',
             };
             return (
-                <Link
-                    key={action.id}
-                    href={action.href}
-                    passHref
-                    legacyBehavior>
-                    <a
-                        className={cn(
-                            glassmorphismBase,
-                            'absolute top-1/2 left-1/2 flex h-12 w-12 items-center justify-center',
-                            'text-gray-800 dark:text-gray-200',
-                            !isOpen && 'opacity-0 invisible'
-                        )}
-                        id={action.id}
-                        aria-label={action.label}
-                        style={style}
-                    >
-                        {action.icon}
-                    </a>
-                </Link>
+              <Link
+                key={action.id}
+                href={action.href}
+                className={cn(
+                    glassmorphismBase,
+                    'absolute top-1/2 left-1/2 flex h-12 w-12 items-center justify-center',
+                    'text-gray-800 dark:text-gray-200',
+                    !isOpen && 'opacity-0 invisible'
+                )}
+                id={action.id}
+                aria-label={action.label}
+                style={style}>
+
+                {action.icon}
+
+              </Link>
             );
         })}
         
