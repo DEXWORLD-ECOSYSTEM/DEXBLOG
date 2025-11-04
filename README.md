@@ -9,11 +9,25 @@ O **DEX BLOG** é uma plataforma de conteúdo descentralizada que capacita criad
 
 Construir o futuro da mídia: uma plataforma mais justa, transparente e impulsionada por uma comunidade global de criadores e leitores.
 
+---
+
+## Aparência Visual
+
+A interface do DEX BLOG foi projetada para ser limpa, moderna e responsiva, com suporte total para temas claro e escuro, proporcionando uma experiência de leitura confortável em qualquer ambiente.
+
+### Tema Escuro (Dark Mode)
+
+![DEX BLOG - Tema Escuro](public/images/docs/dark-theme.png)
+
+### Tema Claro (Light Mode)
+
+![DEX BLOG - Tema Claro](public/images/docs/light-theme.png)
+
+---
+
 ## Tecnologias e Arquitetura
 
 O DEX BLOG é uma **aplicação web full-stack**, construída com uma stack moderna que utiliza Next.js tanto para o frontend quanto para o backend, e integra o Genkit para funcionalidades de IA.
-
----
 
 ### **1. Frontend (Interface do Usuário)**
 
