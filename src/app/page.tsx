@@ -17,7 +17,7 @@ import { CreatorsListComponent } from '@/components/creators-list';
 import { VideosSection } from '@/components/videos-section';
 
 export default function Home() {
-  const posts = getPosts({ page: 1, limit: 6 });
+  const posts = getPosts({ page: 1, limit: 8 });
   const featuredPost = getFeaturedPost();
   const fadePlugin = useRef(Fade());
   const bannerImages = Array.from({ length: 10 }, (_, i) => `/images/ads/banner/${i + 1}.png`);
@@ -102,14 +102,14 @@ export default function Home() {
 
           <section>
             <h2 className="font-headline text-3xl font-bold mb-8">Artigos Recentes</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {posts.map((post) => (
                 <PostCard key={post.id} post={post} />
               ))}
             </div>
             <div className="mt-12">
               <Suspense fallback={<div>Carregando...</div>}>
-                <PaginationComponent totalPages={Math.ceil(getPosts({}).length / 6)} />
+                <PaginationComponent totalPages={Math.ceil(getPosts({}).length / 8)} />
               </Suspense>
             </div>
           </section>
