@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Search, Menu, X } from 'lucide-react'; // Importado o ícone X
+import { Search, Menu, X } from 'lucide-react';
 import {
   Sheet,
   SheetContent,
@@ -24,7 +24,7 @@ const navLinks = [
 ];
 
 const Logo = () => (
-  <Link href="/" className="font-headline text-2xl font-bold">
+  <Link href="/" className="font-headline text-2xl font-bold text-foreground">
     DEX World
   </Link>
 );
@@ -41,7 +41,7 @@ const NavMenu = ({ onClick }: { onClick?: () => void }) => (
         key={link.href}
         href={link.href}
         className={cn(
-          'text-foreground/60 transition-colors hover:text-foreground/80',
+          'text-muted-foreground transition-colors hover:text-foreground',
           onClick && 'text-lg'
         )}
         onClick={onClick}
@@ -56,10 +56,10 @@ const NavMenu = ({ onClick }: { onClick?: () => void }) => (
 
 export function SiteHeader() {
   const [isSheetOpen, setSheetOpen] = useState(false);
-  const [isSearchOpen, setSearchOpen] = useState(false); // Estado para a busca mobile
+  const [isSearchOpen, setSearchOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/20">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/20">
       <div className="container mx-auto flex h-16 items-center px-4">
         {/* === LAYOUT DESKTOP === */}
         <div className="hidden w-full items-center md:flex">
