@@ -17,7 +17,8 @@ A interface do DEX BLOG foi projetada para ser limpa, moderna e responsiva, com 
 
 ### Tema Escuro (Dark Mode)
 
-![DEX BLOG - Tema Escuro](public/images/docs/dark-theme.png)
+![DEX BLOG - Tema Escuro](public/images/docs/dark-theme.png)<img width="364" height="766" alt="Captura de tela de 2025-11-04 14-28-54" src="https://github.com/user-attachments/assets/01909ab5-f1cb-403b-985a-578e13cda43c" />
+
 
 ### Tema Claro (Light Mode)
 
