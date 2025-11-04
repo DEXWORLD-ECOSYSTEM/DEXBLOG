@@ -15,6 +15,12 @@ Construir o futuro da mídia: uma plataforma mais justa, transparente e impulsio
 
 A interface do DEX BLOG foi projetada para ser limpa, moderna e responsiva, com suporte total para temas claro e escuro, proporcionando uma experiência de leitura confortável em qualquer ambiente.
 
+### Exemplos Visuais dos Temas
+
+| Tema Claro (Light Mode)                                                                     | Tema Escuro (Dark Mode)                                                                     |
+| :------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------ |
+| ![Captura de tela de 2025-11-04 14-28-41](https://github.com/user-attachments/assets/e277eb1b-964f-4bc7-be61-238d3b169d36) | ![Captura de tela de 2025-11-04 14-28-54](https://github.com/user-attachments/assets/01909ab5-f1cb-403b-985a-578e13cda43c) |
+
 ### Tema Escuro (Dark Mode)
 <img width="364" height="766" alt="Captura de tela de 2025-11-04 14-28-54" src="https://github.com/user-attachments/assets/01909ab5-f1cb-403b-985a-578e13cda43c" />
 
