@@ -7,8 +7,7 @@ export const VideosSection = () => {
   const videos = getVideos();
 
   return (
-    <section className="py-12">
-      <div className="container mx-auto px-4">
+    <section className="my-12">
         <div className="flex justify-between items-center mb-8">
           <h2 className="font-headline text-3xl font-bold">Vídeos.</h2>
           <Link href="#" className="text-primary hover:underline font-semibold flex items-center">
@@ -40,7 +39,6 @@ export const VideosSection = () => {
             </div>
           ))}
         </div>
-      </div>
     </section>
   );
 };
