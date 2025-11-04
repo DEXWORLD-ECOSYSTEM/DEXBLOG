@@ -11,11 +11,8 @@ import { Badge } from '@/components/ui/badge';
 import { TagPills } from '@/components/tag-pills';
 import { format, parseISO } from 'date-fns';
 import Link from 'next/link';
-import { Card } from '@/components/ui/card';
-import { Carousel, CarouselContent, CarouselItem, CarouselIndicatorGroup } from '@/components/ui/carousel';
-import { useRef } from 'react';
-import Autoplay from 'embla-carousel-autoplay';
-import Fade from 'embla-carousel-fade';
+import { PostSidebarSection } from '@/components/sections/post-sidebar-section';
+import { BannerCarouselSection } from '@/components/sections/ads/banner-carousel-section';
 
 export default function PostPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
@@ -30,45 +27,13 @@ export default function PostPage({ params }: { params: { slug: string } }) {
   const tags = getTagsByIds(post.tagIds);
   const comments = getCommentsByPostId(post.id);
 
-  const fadePlugin1 = useRef(Fade());
-  const fadePlugin2 = useRef(Fade());
-  const fadePlugin3 = useRef(Fade());
-  const bannerImages = Array.from({ length: 10 }, (_, i) => `/images/ads/banner/${i + 1}.png`);
-
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
       <main className="flex-1">
         <div className="container mx-auto px-4 py-8 md:py-12">
-          <section className="mb-12">
-            <Carousel
-              className="w-full"
-              opts={{
-                loop: true,
-              }}
-              plugins={[fadePlugin1.current, Autoplay({ delay: 5000 })]}
-            >
-              <CarouselContent>
-                {bannerImages.map((src, index) => (
-                  <CarouselItem key={index}>
-                    <Link href="#">
-                      <div className="relative h-[150px] w-full overflow-hidden rounded-lg">
-                        <Image
-                          src={src}
-                          alt={`Banner de anúncio ${index + 1}`}
-                          fill
-                          className="object-cover"
-                          priority={index === 0}
-                        />
-                      </div>
-                    </Link>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselIndicatorGroup />
-            </Carousel>
-          </section>
-          <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-12">
+          <BannerCarouselSection />
+          <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-12 mt-12">
             <article className="lg:col-span-8">
               <header className="mb-8">
                 {category && (
@@ -137,93 +102,8 @@ export default function PostPage({ params }: { params: { slug: string } }) {
               </section>
             </article>
 
-            <aside className="lg:col-span-4 mt-8 lg:mt-0">
-              <div className="sticky top-24 space-y-8">
-                <Carousel
-                  className="w-full"
-                  opts={{
-                    loop: true,
-                  }}
-                  plugins={[fadePlugin2.current, Autoplay({ delay: 5000 })]}
-                >
-                  <CarouselContent>
-                    <CarouselItem>
-                      <Card className="overflow-hidden">
-                        <Link href="#">
-                          <div className="relative aspect-[6/5] w-full">
-                            <Image
-                              src="/images/ads/ad-square1.png"
-                              alt="Advertisement"
-                              fill
-                              className="object-cover"
-                              data-ai-hint="advertisement square"
-                            />
-                          </div>
-                        </Link>
-                      </Card>
-                    </CarouselItem>
-                     <CarouselItem>
-                      <Card className="overflow-hidden">
-                        <Link href="#">
-                          <div className="relative aspect-[6/5] w-full">
-                            <Image
-                              src="/images/ads/ad-square2.png"
-                              alt="Advertisement"
-                              fill
-                              className="object-cover"
-                              data-ai-hint="product promo"
-                            />
-                          </div>
-                        </Link>
-                      </Card>
-                    </CarouselItem>
-                  </CarouselContent>
-                   <CarouselIndicatorGroup />
-                </Carousel>
-
-                 <Carousel
-                  className="w-full"
-                  opts={{
-                    loop: true,
-                  }}
-                  plugins={[fadePlugin3.current, Autoplay({ delay: 7000 })]}
-                >
-                  <CarouselContent>
-                    <CarouselItem>
-                      <Card className="overflow-hidden">
-                        <Link href="#">
-                          <div className="relative aspect-[1/2] w-full">
-                            <Image
-                              src="/images/ads/ad-vertical1.png"
-                              alt="Advertisement"
-                              fill
-                              className="object-cover"
-                              data-ai-hint="advertisement vertical"
-                            />
-                          </div>
-                        </Link>
-                      </Card>
-                    </CarouselItem>
-                     <CarouselItem>
-                      <Card className="overflow-hidden">
-                        <Link href="#">
-                          <div className="relative aspect-[1/2] w-full">
-                            <Image
-                              src="/images/ads/ad-vertical2.png"
-                              alt="Advertisement"
-                              fill
-                              className="object-cover"
-                              data-ai-hint="fashion ad"
-                            />
-                          </div>
-                        </Link>
-                      </Card>
-                    </CarouselItem>
-                  </CarouselContent>
-                   <CarouselIndicatorGroup />
-                </Carousel>
-              </div>
-            </aside>
+            <PostSidebarSection />
+            
           </div>
         </div>
       </main>

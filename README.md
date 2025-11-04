@@ -99,6 +99,31 @@ A página `src/app/page.tsx` orquestra vários componentes de seção para const
       └─ (Contém o rodapé do site, links e direitos autorais)
 ```
 
+#### **Estrutura de Componentes da Página de Post:**
+
+De forma semelhante, a página `src/app/posts/[slug]/page.tsx` é composta por seções modulares para exibir o conteúdo de um artigo e seus elementos relacionados.
+
+```
+🌳 Página de Post (src/app/posts/[slug]/page.tsx)
+   |
+   ├─ 📂 Componente: SiteHeader (src/components/site-header.tsx)
+   |
+   ├─ 📂 Componente Principal (<main>)
+   |  |
+   |  ├─ 🖼️ Seção: Carrossel de Banners (src/components/sections/ads/banner-carousel-section.tsx)
+   |  |
+   |  ├─ 📄 Artigo Principal (<article>)
+   |  |  ├─ 🏷️ Componentes de Conteúdo (Badge, TagPills, Avatar)
+   |  |  ├─ ✍️ Bloco de Biografia do Autor
+   |  |  └─ 💬 Componente: Seção de Comentários (src/components/comments.tsx)
+   |  |
+   |  └─ 🏛️ Seção da Barra Lateral (src/components/sections/post-sidebar-section.tsx)
+   |     ├─ 🖼️ Sub-componente: Carrossel de Anúncios Box (ads/box-ad-carousel.tsx)
+   |     └─  skyscraper 🖼️ Sub-componente: Carrossel de Anúncios Skyscraper (ads/skyscraper-ad-carousel.tsx)
+   |
+   └─ 📂 Componente: SiteFooter (src/components/site-footer.tsx)
+```
+
 ---
 
 ### **2. Backend (Lógica de Servidor)**
