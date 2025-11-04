@@ -1,3 +1,4 @@
+
 # DEX BLOG - Plataforma de Conteúdo Descentralizada
 
 ## Missão
@@ -61,6 +62,41 @@ src
 
 public/
 └── images/               # Imagens estáticas (logos, avatares)
+```
+
+#### **Estrutura de Componentes da Página Inicial:**
+
+A página `src/app/page.tsx` orquestra vários componentes de seção para construir a homepage. A árvore de componentes abaixo ilustra essa composição:
+
+```
+🌳 Página Inicial (src/app/page.tsx)
+   |
+   ├─ 📂 Componente: SiteHeader (src/components/site-header.tsx)
+   |  └─ (Contém o cabeçalho, logo e menu de navegação)
+   |
+   ├─ 📂 Componente Principal (<main>)
+   |  |
+   |  ├─ 🖼️ Seção: Carrossel de Banners (src/components/sections/ads/banner-carousel-section.tsx)
+   |  |  └─ 🧩 Sub-componente: <Carousel />
+   |  |
+   |  ├─ ⭐ Seção: Post em Destaque (src/components/sections/featured-post-section.tsx)
+   |  |  ├─ 🧩 Sub-componente: <Card />
+   |  |  └─ 💾 Fonte de Dados: getFeaturedPost()
+   |  |
+   |  ├─ 🧑‍💻 Seção: Lista de Criadores (src/components/sections/creators-list-section.tsx)
+   |  |  └─ 🧩 Sub-componente: <CreatorsListComponent />
+   |  |
+   |  ├─ 📝 Seção: Artigos Recentes (src/components/sections/recent-articles-section.tsx)
+   |  |  ├─ 🧩 Sub-componente: <PostCard /> (um para cada post)
+   |  |  ├─ 🧩 Sub-componente: <PaginationComponent />
+   |  |  └─ 💾 Fonte de Dados: getPosts()
+   |  |
+   |  └─ 📺 Seção: Vídeos (src/components/sections/videos-section.tsx)
+   |     └─ 🧩 Sub-componente: <VideosSection />
+   |        └─ 💾 Fonte de Dados: getVideos()
+   |
+   └─ 📂 Componente: SiteFooter (src/components/site-footer.tsx)
+      └─ (Contém o rodapé do site, links e direitos autorais)
 ```
 
 ---
