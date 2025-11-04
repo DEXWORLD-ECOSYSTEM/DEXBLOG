@@ -56,6 +56,19 @@
   }
 }
 
+/* Definição da propriedade para animar o gradiente */
+@property --gradient-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* Keyframes para a animação do gradiente */
+@keyframes spin-gradient {
+  0% { --gradient-angle: 0deg; }
+  100% { --gradient-angle: 360deg; }
+}
+
 @layer utilities {
   .orbiting-button::before {
     content: "";
@@ -64,25 +77,23 @@
     left: -1px;
     right: -1px;
     bottom: -1px;
-    border-radius: 9999px; /* Ensure it's a circle */
-    z-index: -1; /* Place it behind the button */
-  }
-  
-  /* Light theme: conic gradient background */
-  html:not(.dark) .orbiting-button::before {
-    background: conic-gradient(
-      from 180deg at 50% 50%,
-      #2196f3,
-      #673ab7,
-      #e91e63,
-      #ffc107,
-      #2196f3
-    );
+    border-radius: 9999px; /* Garante que seja um círculo */
+    z-index: -1; /* Posiciona atrás do botão */
   }
 
-  /* Dark theme: single point border */
+  /* Modo Claro: anima o ângulo do gradiente cônico */
+  html:not(.dark) .orbiting-button::before {
+    background: conic-gradient(
+      from var(--gradient-angle) at 50% 50%,
+      #2196f3, #673ab7, #e91e63, #ffc107, #2196f3
+    );
+    animation: spin-gradient 5s linear infinite;
+  }
+
+  /* Modo Escuro: anima a rotação do elemento (borda) */
   .dark .orbiting-button::before {
-     border: 2px solid transparent;
-     border-top-color: hsl(var(--ring));
+    border: 2px solid transparent;
+    border-top-color: hsl(var(--ring));
+    animation: orbit 5s linear infinite; /* 'orbit' usa transform:rotate do tailwind.config.ts */
   }
 }
