@@ -1,5 +1,5 @@
 import { getVideos } from '@/lib/videos-data';
-import { Card } from './ui/card';
+import { Card } from '@/components/ui/card';
 import Image from 'next/image';
 import Link from 'next/link';
 
