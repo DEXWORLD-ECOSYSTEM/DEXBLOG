@@ -97,3 +97,9 @@
     animation: orbit 5s linear infinite; /* 'orbit' usa transform:rotate do tailwind.config.ts */
   }
 }
+
+body {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
