@@ -23,7 +23,7 @@ export function BoxAdCarousel() {
       <CarouselContent>
         {adImages.map((src, index) => (
           <CarouselItem key={index}>
-            <Card className="overflow-hidden">
+            <Card className="overflow-hidden shadow-glow">
               <Link href="#">
                 <div className="relative aspect-[6/5] w-full">
                   <Image

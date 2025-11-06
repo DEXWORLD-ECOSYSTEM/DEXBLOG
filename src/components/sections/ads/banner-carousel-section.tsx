@@ -22,12 +22,12 @@ export const BannerCarouselSection = () => {
           {bannerImages.map((src, index) => (
             <CarouselItem key={index}>
               <Link href="#">
-                <div className="relative h-[90px] w-full overflow-hidden rounded-lg md:h-[150px]">
+                <div className="relative h-[90px] w-full rounded-lg shadow-glow md:h-[150px]">
                   <Image
                     src={src}
                     alt={`Banner de anúncio ${index + 1}`}
                     fill
-                    className="object-cover"
+                    className="object-cover rounded-lg"
                     priority={index === 0}
                   />
                 </div>

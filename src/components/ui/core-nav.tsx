@@ -74,6 +74,7 @@ const CoreNav = () => {
                     glassmorphismBase,
                     'absolute top-1/2 left-1/2 flex h-12 w-12 items-center justify-center',
                     'text-gray-800 dark:text-gray-200',
+                    'orbiting-button',
                     !isOpen && 'opacity-0 invisible'
                 )}
                 id={action.id}
@@ -92,6 +93,7 @@ const CoreNav = () => {
               glassmorphismBase,
               'absolute top-1/2 left-1/2 flex h-12 w-12 items-center justify-center',
               'text-gray-800 dark:text-gray-200',
+              'orbiting-button',
               !isOpen && 'opacity-0 invisible'
           )}
           style={{

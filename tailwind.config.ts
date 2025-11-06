@@ -1,3 +1,4 @@
+
 import type {Config} from 'tailwindcss';
 
 export default {
@@ -56,7 +57,6 @@ export default {
           foreground: 'hsl(var(--destructive-foreground))',
         },
         border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         chart: {
           '1': 'hsl(var(--chart-1))',
@@ -83,7 +83,7 @@ export default {
         },
       },
       boxShadow: {
-        'glow': '0 0 15px 0 rgba(56, 161, 243, 0.4)',
+        'glow': '0 0 18px 1px rgba(56, 161, 243, 0.4)',
       },
       borderRadius: {
         lg: 'var(--radius)',
