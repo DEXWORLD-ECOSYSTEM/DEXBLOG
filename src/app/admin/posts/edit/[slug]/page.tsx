@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { notFound } from 'next/navigation';
 import { getPostBySlug } from '@/lib/data';
 import { ArticleEditor } from '@/components/admin/article-editor';
