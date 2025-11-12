@@ -17,7 +17,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Sparkles, LoaderCircle } from 'lucide-react';
-import { suggestArticleExpansion } from '@/ai/flows/suggest-article-expansion';
+// import { suggestArticleExpansion } from '@/ai/flows/suggest-article-expansion';
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 
@@ -56,31 +56,10 @@ export function ArticleEditor({ post }: ArticleEditorProps) {
   }
 
   async function handleAiAnalysis() {
-    const content = form.getValues('content');
-    if (content.length < 50) {
-      toast({
-        variant: 'destructive',
-        title: 'Content too short',
-        description: 'Please write at least 50 characters before analyzing.',
-      });
-      return;
-    }
-
-    setIsAiLoading(true);
-    setAiSuggestions([]);
-    try {
-      const result = await suggestArticleExpansion({ articleContent: content });
-      setAiSuggestions(result.suggestions);
-    } catch (error) {
-      console.error('AI suggestion error:', error);
-      toast({
-        variant: 'destructive',
-        title: 'AI Analysis Failed',
-        description: 'Could not get suggestions. Please try again.',
-      });
-    } finally {
-      setIsAiLoading(false);
-    }
+    toast({
+        title: "AI Analysis Disabled",
+        description: "This feature is temporarily disabled to be compatible with Edge Runtime.",
+    })
   }
 
   return (
@@ -135,6 +114,7 @@ export function ArticleEditor({ post }: ArticleEditorProps) {
                 <Button type="submit" className="w-full">Save Post</Button>
             </CardContent>
           </Card>
+          {/*
           <Card>
             <CardHeader>
               <CardTitle>AI Assistant</CardTitle>
@@ -173,7 +153,7 @@ export function ArticleEditor({ post }: ArticleEditorProps) {
                 </div>
               )}
             </CardContent>
-          </Card>
+          </Card>*/}
         </div>
       </form>
     </Form>
